@@ -1,0 +1,6 @@
+bower_components
+target
+src/main/webapp/app/css
+node
+node_modules
+nb-configuration.xml

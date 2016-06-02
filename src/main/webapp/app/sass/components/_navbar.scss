@@ -1,0 +1,10 @@
+
+
+.header-nav {
+	@extend .navbar;
+	@extend .navbar-inverse;
+
+	background-image: none;
+	background-color: rgba(34,34,34,1);	
+	
+}
