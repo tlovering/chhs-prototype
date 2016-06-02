@@ -7,7 +7,6 @@
 		<link rel="stylesheet" href="/app/css/styles.css" media="screen"/>
     </head>
     <body ng-app="chhs">
-        <h1>Hello World!</h1>
 		<div ng-view>
 
 		</div>
