@@ -7,6 +7,8 @@ angular.module('chhs').config(function ($routeProvider) {
       controller: 'homeCtrl',
       controllerAs: 'home'
     })
+    .when('/login', {})
+    .when('/dashboard', {})
     .otherwise({
       redirectTo: '/'
     });
