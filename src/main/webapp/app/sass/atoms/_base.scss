@@ -1,0 +1,14 @@
+html {
+  // Aliasing fixes
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  // Sizing fixes
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body{
+  // Bootstrap's fixed header is ~50px tall
+  padding: 50px;
+}

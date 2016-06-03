@@ -1,88 +1,87 @@
-main.page-home {
+.page-home {
   max-width: 1220px;
   margin: 0 auto;
   top: 100px;
+}
 
-  .home-banner {
-    width: 100%;
-    height: 400px;
-    img {
-      position: relative;
-      width: 100%;
-      height: 100%;
-    }
-    h2 {
-      position: relative;
-      top: -350px;
-      left: 60px;
-      width: 100%;
-      color: white;
-    }
+.page-home__banner {
+  width: 100%;
+  height: 400px;
+}
+
+.page-home__banner-slogan{
+  position: relative;
+  top: -350px;
+  left: 60px;
+  width: 100%;
+  color: white;
+}
+
+.page-home__banner-image{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.page-home__info-col {
+  height: 75px;
+  color: white;
+
+  a {
+    color: #053557;
+    font-weight: bold;
+    text-decoration: underline;
   }
 
-  .info-col {
-    height: 75px;
-    color: white;
-
-    a {
-      color: #053557;
-      font-weight: bold;
-      text-decoration: underline;
-    }
-
-    p, div {
-      width: 70%;
-      margin: 0 auto;
-    }
-
-    div {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    &.col-account-btn {
-      background-color: #1395A7;
-      text-align: center;
-    }
-
-    &.col-account-info {
-      background-color: #16AFCF;
-    }
-
-    &.col-login-btn {
-      background-color: #72A025;
-      text-align: center;
-    }
-
-    &.col-login-info {
-      background-color: #84BB2B;
-    }
-
+  p, div {
+    width: 70%;
+    margin: 0 auto;
   }
 
-  .home-summary {
-    margin-top: 60px;
-
-    h4 {
-      text-align: center;
-      color: #F47100;
-      margin: 20px 0;
-    }
-
-    .summary-content {
-      border-right: solid 1px #CCC;
-      min-height: 250px;
-    }
-
-    .summary-section:last-child .summary-content {
-      border: none;
-
-    }
-
+  div {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
 }
 
+.page-home__info-col-account-btn {
+  background-color: #1395A7;
+  text-align: center;
+}
 
+.page-home__info-col-account-info {
+  background-color: #16AFCF;
+}
 
+.page-home__info-col-login-btn {
+  background-color: #72A025;
+  text-align: center;
+}
+
+.page-home__info-col-login-info {
+  background-color: #84BB2B;
+}
+
+.page-home__summary {
+  margin-top: 60px;
+}
+
+.page-home__summary-section{
+  border-right: solid 1px #CCC;
+
+  &:last-child{
+    border: none;
+  }
+}
+
+.page-home__summary-header{
+  text-align: center;
+  color: #F47100;
+  margin: 20px 0;
+}
+
+.page-home__summary-content{
+  min-height: 250px;
+}

@@ -1,3 +1,21 @@
+// Atoms (variables, framework presets, etc.)
+@import "atoms/variables";
+@import "atoms/bootstrap";
+
+// Space (frameworks, external imports, etc.)
 @import "bootstrap";
-@import "components/navbar";
+
+// Atoms (typography, base element settings etc.)
+@import "atoms/typography";
+@import "atoms/base";
+
+// Molecules (widgets, input groups, etc.)
+
+// Organisms (page sections, etc.)
+@import "organisms/site-header";
+@import "organisms/site-footer.scss";
+
+// Templates (layouts, etc.)
+
+// Pages (page-specific styling, etc.)
 @import "pages/home";
