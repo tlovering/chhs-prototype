@@ -1,6 +1,6 @@
 .page-home {
-  max-width: 1220px;
-  margin: 0 auto;
+  max-width: $site-width;
+  margin: 0 auto 40px auto;
   top: 100px;
 }
 
@@ -28,7 +28,7 @@
   color: white;
 
   a {
-    color: #053557;
+    color: $link-color;
     font-weight: bold;
     text-decoration: underline;
   }
@@ -47,21 +47,21 @@
 }
 
 .page-home__info-col-account-btn {
-  background-color: #1395A7;
+  background-color: $dark-blue;
   text-align: center;
 }
 
 .page-home__info-col-account-info {
-  background-color: #16AFCF;
+  background-color: $light-blue;
 }
 
 .page-home__info-col-login-btn {
-  background-color: #72A025;
+  background-color: $dark-green;
   text-align: center;
 }
 
 .page-home__info-col-login-info {
-  background-color: #84BB2B;
+  background-color: $light-green;
 }
 
 .page-home__summary {
@@ -69,19 +69,26 @@
 }
 
 .page-home__summary-section{
-  border-right: solid 1px #CCC;
 
-  &:last-child{
-    border: none;
+  @media(min-width: $main-medium){
+    border-right: solid 1px #CCC;
+
+    &:last-child{
+      border: none;
+    }
   }
 }
 
 .page-home__summary-header{
   text-align: center;
-  color: #F47100;
   margin: 20px 0;
+  a {
+    color: $orange;
+  }
 }
 
 .page-home__summary-content{
-  min-height: 250px;
+  @media(min-width: $main-medium){
+    min-height: 250px;
+  }
 }
