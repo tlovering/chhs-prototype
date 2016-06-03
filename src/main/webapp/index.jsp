@@ -17,12 +17,14 @@
 		<script type="text/javascript" src="bower_components/angular/angular.js"></script>
 		<script type="text/javascript" src="bower_components/angular-cookies/angular-cookies.js"></script>
 		<script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+		<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 		<!-- endbuild -->
 
 		<!-- build:appJs app/app-all.js -->
 		<script type="text/javascript" src="app/application.js"></script>
 		<script type="text/javascript" src="app/routes.js"></script>
 		<script type="text/javascript" src="app/home/homeCtrl.js"></script>
+		<script type="text/javascript" src="app/nav/navBarDir.js"></script>
 		<!-- endbuild -->
     </body>
 </html>
