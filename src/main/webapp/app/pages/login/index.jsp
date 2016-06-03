@@ -2,10 +2,16 @@
 
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
-<sec:authorize access="isAnonymous()">
-  <form>
-    <input type="text" placeholder="EMail"/>
-    <input type="password" placeholder="Password"/>
-    <button>Login</button>
-  </form>
-</sec:authorize>
+<div class="login">
+  <div class="login__header">
+    <h4>SIGN IN</h4>
+  </div>
+  <%--<sec:authorize access="isAnonymous()">--%>
+    <form class="login__form">
+      <input class="form-control" type="text" placeholder="Email"/>
+      <input class="form-control" type="password" placeholder="Password"/>
+      <button type="submit" class="btn btn-default">Log In</button>
+    </form>
+  <%--</sec:authorize>--%>
+</div>
+
