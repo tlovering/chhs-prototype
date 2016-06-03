@@ -19,7 +19,7 @@
         </div>
         <div class="page-home__info-col page-home__info-col-login-info col-md-5">
           <div>
-            <p><a href="/">Create an account</a> to find and communicate with foster homes in your area.</p>
+            <p><a href="#/login">Sign in</a> to find and communicate with foster homes in your area.</p>
           </div>
         </div>
         <div class="page-home__info-col page-home__info-col-account-btn col-md-1">
@@ -27,9 +27,10 @@
         </div>
         <div class="page-home__info-col page-home__info-col-account-info col-md-5">
           <div>
-            <p><a href="/">Sign in</a> to find and communicate with foster homes in your area.</p>
+            <p><a href="/">Create an account</a> to find and communicate with foster homes in your area.</p>
           </div>
         </div>
+
       </div>
     </section>
   </sec:authorize>
