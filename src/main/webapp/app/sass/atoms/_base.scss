@@ -10,5 +10,7 @@ html {
 
 body{
   // Bootstrap's fixed header is ~50px tall
-  padding: 50px;
+  padding-top: 50px;
+  max-width: $site-width;
+  margin: 0 auto;
 }
