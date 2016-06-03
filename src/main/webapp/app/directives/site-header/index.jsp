@@ -19,7 +19,7 @@
       <ul class="nav-links nav navbar-nav navbar-right">
         <sec:authorize access="isAnonymous()">
         <li><a href="">CREATE ACCOUNT</a></li>
-        <li><a href="">LOGIN</a></li>
+        <li><a href="#/login">LOGIN</a></li>
         </sec:authorize>
         <li><a href="">HELP</a></li>
       </ul>
