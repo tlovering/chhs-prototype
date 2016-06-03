@@ -1,6 +1,22 @@
-bower_components
+# IDE files
+.idea
+*.iml
+*.ipr
+*.iws
+
+# System files
+.DS_Store
+thumbs.db
+
+# Build artifacts
+.sass-cache
 target
 src/main/webapp/app/css
-node
+
+# Dependencies
 node_modules
+bower_components
+
+# Others
 nb-configuration.xml
+node
