@@ -1,0 +1,9 @@
+language: java
+
+before_script:
+  - npm install -g bower
+cache:
+  directories:
+    - $HOME/.m2
+sudo: false
+install: true
