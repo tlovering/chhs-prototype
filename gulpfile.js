@@ -16,61 +16,61 @@ var del = require('del');
 var sourcemap = require('gulp-sourcemaps');
 
 gulp.task('convert-sass', function () {
-	return gulp.src('src/main/webapp/app/sass/*.scss')
-			.pipe(sourcemap.init())
-			.pipe(sass({
-				outputStyle: 'compressed',
-				includePaths: [
-					'src/main/webapp/bower_components/bootstrap-sass-official/assets/stylesheets'
-				],
-				sourcemaps: true
-			})) 
-			.pipe(sourcemap.write('./'))
-			.pipe(gulp.dest('src/main/webapp/app/css/'));
+  return gulp.src('src/main/webapp/app/sass/*.scss')
+    .pipe(sourcemap.init())
+    .pipe(sass({
+      outputStyle: 'compressed',
+      includePaths: [
+        'src/main/webapp/bower_components/bootstrap-sass-official/assets/stylesheets'
+      ],
+      sourcemaps: true
+    }))
+    .pipe(sourcemap.write('./'))
+    .pipe(gulp.dest('src/main/webapp/app/css/'));
 });
 
 
 gulp.task('test', function () {
-	return gulp.src('./blah')
-			.pipe(karma({configFile: 'karma.conf.js', action: 'run'}))
-			.on('error', function (err) {
-				throw err;
-			});
+  return gulp.src('./blah')
+    .pipe(karma({configFile: 'karma.conf.js', action: 'run'}))
+    .on('error', function (err) {
+      throw err;
+    });
 });
 
 gulp.task('test-watch', function () {
-	return gulp.src('./blah')
-			.pipe(karma({
-				configFile: 'karma.conf.js',
-				action: 'watch'
-			}));
+  return gulp.src('./blah')
+    .pipe(karma({
+      configFile: 'karma.conf.js',
+      action: 'watch'
+    }));
 });
 
 gulp.task('usemin', ['scripts', 'convert-sass'], function () {
-	return gulp.src('**/*.jsp', {cwd: 'src/main/webapp/'})
-			.pipe(usemin({
-				externalJs: [ngmin(), uglify()],
-				appJs: [ngmin(), uglify()]
-			}))
-			.pipe(gulp.dest('target/chhs-frontend/'));
+  return gulp.src('**/*.jsp', {cwd: 'src/main/webapp/'})
+    .pipe(usemin({
+      externalJs: [ngmin(), uglify()],
+      appJs: [ngmin(), uglify()]
+    }))
+    .pipe(gulp.dest('target/chhs-frontend/'));
 });
 
 
 gulp.task('copy-fonts', [], function () {
-	return gulp.src(['src/main/webapp/fonts/*.{ttf,woff,woff2,eot,svg}', 'src/main/webapp/bower_components/**/*.{ttf,woff,woff2,eot,svg}'])
-			.pipe(flatten())
-			.pipe(gulp.dest('target/frontend-app/fonts'));
+  return gulp.src(['src/main/webapp/fonts/*.{ttf,woff,woff2,eot,svg}', 'src/main/webapp/bower_components/**/*.{ttf,woff,woff2,eot,svg}'])
+    .pipe(flatten())
+    .pipe(gulp.dest('target/frontend-app/fonts'));
 });
 
 gulp.task('scripts', function () {
-	return gulp.src('app/**/*.js', {cwd: 'src/main/webapp/'})
-			.pipe(jshint())
-			.pipe(jshint.reporter(stylish));
+  return gulp.src('app/**/*.js', {cwd: 'src/main/webapp/'})
+    .pipe(jshint())
+    .pipe(jshint.reporter(stylish));
 });
 
 gulp.task('watch', function () {
-	gulp.watch('src/main/webapp/app/sass/**/*.scss', ['convert-sass']);
-	gulp.watch('src/main/webapp/app/**/*.js', ['scripts']);
+  gulp.watch('src/main/webapp/app/sass/**/*.scss', ['convert-sass']);
+  gulp.watch('src/main/webapp/app/**/*.js', ['scripts']);
 });
 
 gulp.task('ci', ['default']);
@@ -78,34 +78,33 @@ gulp.task('ci', ['default']);
 gulp.task('default', ['scripts', 'convert-sass']);
 
 gulp.task('release', ['usemin', 'remove-bower'], function () {
-	return cdned('');
+  return cdned('');
 });
 
 gulp.task('remove-bower', function () {
-	del([
-		'target/frontend-app/bower_components'
-	]);
+  del([
+    'target/frontend-app/bower_components'
+  ]);
 });
 
 function cdned(cdn) {
-	var cssFilter = filter('**/*.css', {restore: true});
-	var jsFilter = filter('**/*.js', {restore: true});
-	return gulp.src(['**/*.js', '**/*.css', '**/index.jsp', '!bower_components', ], {cwd: 'target/chhs-frontend/'})
-			.pipe(jsFilter)
-			.pipe(rev())
-			.pipe(jsFilter.restore)
-			.pipe(cssFilter)
-			.pipe(rev())
-			.pipe(cssFilter.restore)
-			.pipe(revReplace({replaceInExtensions: ['.html', '.jsp']}))
-			.pipe(cdnizer({
-				defaultCDNBase: cdn,
-				relativeRoot: '/',
-				files: [
-					'**/*.js',
-					'**/styles.css'
-				]
-			}))
-			.pipe(gulp.dest('target/chhs-frontend/'));
+  var cssFilter = filter('**/*.css', {restore: true});
+  var jsFilter = filter('**/*.js', {restore: true});
+  return gulp.src(['**/*.js', '**/*.css', '**/index.jsp', '!bower_components',], {cwd: 'target/chhs-frontend/'})
+    .pipe(jsFilter)
+    .pipe(rev())
+    .pipe(jsFilter.restore)
+    .pipe(cssFilter)
+    .pipe(rev())
+    .pipe(cssFilter.restore)
+    .pipe(revReplace({replaceInExtensions: ['.html', '.jsp']}))
+    .pipe(cdnizer({
+      defaultCDNBase: cdn,
+      relativeRoot: '/',
+      files: [
+        '**/*.js',
+        '**/styles.css'
+      ]
+    }))
+    .pipe(gulp.dest('target/chhs-frontend/'));
 }
-;
