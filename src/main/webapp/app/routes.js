@@ -7,6 +7,11 @@ angular.module('chhs').config(function ($routeProvider) {
       controller: 'homeCtrl',
       controllerAs: 'home'
     })
+    .when('/register', {
+      templateUrl: '/app/pages/register/index.jsp',
+      controller: 'registerCtrl',
+      controllerAs: 'register'
+    })
     .when('/login', {
       templateUrl: '/app/pages/login/index.jsp',
       controller: 'loginCtrl',
