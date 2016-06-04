@@ -34,6 +34,8 @@
     <script src="app/pages/dashboard/index.js"></script>
     <script src="app/directives/site-header/index.js"></script>
     <script src="app/directives/site-footer/index.js"></script>
+    <script src="app/directives/chhs-locator/index.js"></script>
+    <script src="app/directives/chhs-messenger/index.js"></script>
     <!-- endbuild -->
 
   </body>

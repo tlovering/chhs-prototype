@@ -4,5 +4,16 @@
 
 
 <sec:authorize access="isAnonymous()">
-  Dashobord!
+
 </sec:authorize>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="chhs-locator"></div>
+    </div>
+    <div class="col-sm-6">
+      <div class="chhs-messenger"></div>
+    </div>
+  </div>
+</div>
