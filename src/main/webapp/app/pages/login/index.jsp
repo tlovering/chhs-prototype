@@ -31,7 +31,7 @@
   </div>
 
   <div class="login__create-account">
-    <a href="#/account"><button class="btn btn-default">CREATE NEW ACCOUNT</button></a>
+    <a href="#/register"><button class="btn btn-default">CREATE NEW ACCOUNT</button></a>
   </div>
 </div>
 
