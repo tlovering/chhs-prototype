@@ -4,18 +4,18 @@
 
 <nav class="site-header__navigation navbar navbar-default navbar-fixed-top">
   <div class="container">
-    <div class="navbar-header">
+    <div class="site-header__navbar-header navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNav">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="">
-        <img alt="CWDS" src="">
+      <a class="navbar-brand" href="#/home">
+        <img class="site-header__logo" alt="CWDS" src="app/assets/site-header/logo.png">
       </a>
     </div>
-    <div class="collapse navbar-collapse" id="topNav">
-      <ul class="nav-links nav navbar-nav navbar-right">
+    <div class="site-header__collapse collapse navbar-collapse" id="topNav">
+      <ul class="site_header__links nav navbar-nav navbar-right">
         <sec:authorize access="isAnonymous()">
         <li><a href="#/register">CREATE ACCOUNT</a></li>
         <li><a href="#/login">LOGIN</a></li>
