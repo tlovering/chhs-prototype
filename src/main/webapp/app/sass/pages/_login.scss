@@ -3,16 +3,16 @@
 }
 
 .login__header {
-  background-color: $light-green;
+  background-color: $green-2;
   color: white;
   height: 75px;
   margin-bottom: 60px;
 
-  background: $light-green; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(-90deg, $light-green, $dark-green); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(-90deg, $light-green, $dark-green); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(-90deg, $light-green, $dark-green); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(-90deg, $light-green, $dark-green); /* Standard syntax */
+  background: $green-2; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(-90deg, $green-2, $green-1); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(-90deg, $green-2, $green-1); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(-90deg, $green-2, $green-1); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(-90deg, $green-2, $green-1); /* Standard syntax */
 
   h4 {
     margin-left: 30px;
@@ -26,7 +26,7 @@
 
 
   label {
-    color: $site-text-color;
+    color: $gray-2;
   }
 
   input {
@@ -35,7 +35,7 @@
 
   button {
     width: 100%;
-    background-color: $dark-green;
+    background-color: $green-1;
     color: white;
   }
 
@@ -87,12 +87,12 @@
   width: 80%;
 
   button {
-    color: $light-blue;
+    color: $blue-3;
     font-weight: bold;
     width: 100%;
 
     &:hover {
-      background-color: $light-blue;
+      background-color: $blue-3;
       color: white;
     }
   }
