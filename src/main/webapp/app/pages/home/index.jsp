@@ -7,8 +7,9 @@
 <div class="page-home container-fluid">
 
   <div class="page-home__banner">
-    <img class="page-home__banner-image" src="http://placekitten.com/g/1200/400">
-    <h2 class="page-home__banner-slogan">Connecting families with foster caregivers</h2>
+    <img class="page-home__banner-image" src="app/assets/home/home-banner.png">
+    <h2 class="page-home__banner-slogan">Connecting families</h2>
+    <h2 class="page-home__banner-slogan">with foster caregivers.</h2>
   </div>
 
   <sec:authorize access="isAnonymous()">
@@ -38,6 +39,7 @@
   <section class="page-home__summary">
     <div class="page-home__summary-section col-md-4">
       <div class="page-home__summary-content">
+        <img class="page_home_summary-img" src="app/assets/home/locator.png">
         <h4 class="page-home__summary-header"><a href="">Foster Home Locator</a></h4>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -53,6 +55,7 @@
     </div>
     <div class="page-home__summary-section col-md-4">
       <div class="page-home__summary-content">
+        <img class="page_home_summary-img" src="app/assets/home/message_caseworkers.png">
         <h4 class="page-home__summary-header"><a href="">Message Caseworkers</a></h4>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -68,6 +71,7 @@
     </div>
     <div class="page-home__summary-section col-md-4">
       <div class="page-home__summary-content">
+        <img class="page_home_summary-img" src="app/assets/home/contact.png">
         <h4 class="page-home__summary-header"><a href="">About/Contact CWDS</a></h4>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
