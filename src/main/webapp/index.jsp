@@ -35,6 +35,7 @@
     <script src="app/routes.js"></script>
     <script src="app/factories/auth.js"></script>
     <script src="app/factories/account.js"></script>
+    <script src="app/factories/fosterHomes.js"></script>
     <script src="app/pages/home/index.js"></script>
     <script src="app/pages/login/index.js"></script>
     <script src="app/pages/register/index.js"></script>
