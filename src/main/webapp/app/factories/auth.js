@@ -1,7 +1,7 @@
 /**
  * Created by rcharow on 6/4/16.
  */
-angular.module('chhs').factory('Auth', function($http,$log,$q) {
+angular.module('chhs').factory('Auth', function($http,$log) {
   var login = function (username, password) {
     var authRequest = {
       username: username,
