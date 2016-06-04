@@ -5,15 +5,16 @@
 
 .page-home__banner {
   width: 100%;
-  height: 400px;
 }
 
 .page-home__banner-slogan{
   position: relative;
   top: -350px;
-  left: 60px;
+  right: -60%;
   width: 100%;
-  color: white;
+  color: black;
+  margin-top: 0;
+  font-style: italic;
 }
 
 .page-home__banner-image{
@@ -64,7 +65,7 @@
 }
 
 .page-home__summary {
-  margin-top: 60px;
+  margin-top: 20px;
 }
 
 .page-home__summary-section{
@@ -78,6 +79,11 @@
   }
 }
 
+.page_home_summary-img {
+  display: block;
+  margin: 0 auto;
+}
+
 .page-home__summary-header{
   text-align: center;
   margin: 20px 0;
@@ -87,6 +93,7 @@
 }
 
 .page-home__summary-content{
+  margin-bottom: 40px;
   @media(min-width: $main-medium){
     min-height: 250px;
   }
