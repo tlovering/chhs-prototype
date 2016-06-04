@@ -10,7 +10,7 @@
       </div>
       <div class="site-footer__info col-sm-3">
         <ul>
-          <li><a href="">Home</a></li>
+          <li><a href="#/home">Home</a></li>
           <li><a href="">Create Account</a></li>
           <li><a href="#/login">Sign In</a></li>
           <li><a href="">Help</a></li>
