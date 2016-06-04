@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('chhs', ['ngCookies', 'ngRoute'])
+angular.module('chhs', ['ngCookies', 'ngRoute', 'uiGmapgoogle-maps'])
   .config(function ($httpProvider) {
     $httpProvider.interceptors.push(function () {
       return {
