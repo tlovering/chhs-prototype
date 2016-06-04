@@ -6,7 +6,19 @@
   <div class="site-footer__container container">
     <div class="row">
       <div class="site-footer__info col-sm-3">
-        TWITTER!
+        <div class="site-footer_media-container container">
+          <div class="row">
+            <div class="col-xs-4">
+              <a href=""><img class="site-footer__media-image" src="app/assets/site-footer/facebook.png"/></a>
+            </div>
+            <div class="col-xs-4">
+              <a href=""><img class="site-footer__media-image" src="app/assets/site-footer/instagram.png"/></a>
+            </div>
+            <div class="col-xs-4">
+              <a href=""><img class="site-footer__media-image" src="app/assets/site-footer/twitter.png"/></a>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="site-footer__info col-sm-3">
         <ul>
