@@ -16,12 +16,18 @@
     <div class="ng-view"></div>
     <div class="site-footer"></div>
 
+    <!-- Third-party libraries -->
+    <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
+
     <!-- build:externalJs lib/lib-all.js -->
+    <script src='bower_components/lodash/dist/lodash.js'></script>
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src='bower_components/angular-simple-logger/dist/angular-simple-logger.js'></script>
+    <script src='bower_components/angular-google-maps/dist/angular-google-maps.js'></script>
     <!-- endbuild -->
 
     <!-- build:appJs app/app-all.js -->
