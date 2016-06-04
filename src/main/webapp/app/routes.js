@@ -22,6 +22,11 @@ angular.module('chhs').config(function ($routeProvider) {
       controller: 'dashboardCtrl',
       controllerAs: 'dashboard'
     })
+    .when('/support', {
+      templateUrl: '/app/pages/support/index.jsp',
+      controller: 'supportCtrl',
+      controllerAs: 'support'
+    })
     .otherwise({
       redirectTo: '/'
     });

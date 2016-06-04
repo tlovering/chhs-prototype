@@ -20,7 +20,7 @@
         <li><a href="#/register">CREATE ACCOUNT</a></li>
         <li><a href="#/login">LOGIN</a></li>
         </sec:authorize>
-        <li><a href="">HELP</a></li>
+        <li><a href="#/support">HELP</a></li>
       </ul>
     </div>
   </div>
