@@ -13,7 +13,9 @@
 </div>
 
 <div class="chhs-locator__search-map">
-  <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+  <ui-gmap-google-map center='mapSettings.center' zoom='mapSettings.zoom'>
+    <ui-gmap-marker ng-repeat="location in results" idKey="location.id" coords="{ latitude: location.lat, longitude: location.long }"></ui-gmap-marker>
+  </ui-gmap-google-map>
 </div>
 
 <div class="chhs-locator__search-results">
