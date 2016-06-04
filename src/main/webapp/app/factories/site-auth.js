@@ -18,7 +18,14 @@ angular.module('chhs').factory('Auth', function($http,$log,$q) {
 
   }
 
+  var getUserAccount = function(){
+    return $http.get('/api/account').then(function (response) {
+      return response.data;
+    })
+  }
+
   return {
-    login: login
+    login: login,
+    getUserAccount: getUserAccount
   };
 });
