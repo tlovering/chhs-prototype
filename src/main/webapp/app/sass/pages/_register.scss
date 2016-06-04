@@ -1,0 +1,75 @@
+.register__header {
+  background-color: $light-green;
+  color: white;
+  height: 75px;
+  margin-bottom: 60px;
+
+  background: $light-blue; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(-90deg, $light-blue, $dark-blue); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(-90deg, $light-blue, $dark-blue); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(-90deg, $light-blue, $dark-blue); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(-90deg, $light-blue, $dark-blue); /* Standard syntax */
+
+  h4 {
+    margin-left: 30px;
+    line-height: 75px;
+  }
+}
+
+.register__content {
+
+  @media(min-width: $main-medium){
+    width: 40%;
+    margin: 0 auto;
+  }
+}
+
+.register__summary {
+  color: $light-blue;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.register__form {
+
+  .container {
+    width: 100%;
+  }
+}
+
+.register__input-col {
+  padding-bottom: 30px;
+  padding-top: 0;
+  &:first-child {
+    padding-left: 0;
+  }
+  &:last-child {
+    padding-right: 0;
+  }
+}
+
+.register__required-label {
+  span {
+    color: red;
+  }
+}
+
+.register__submit {
+  margin-top: 40px;
+}
+
+.register__btn-create {
+  color: white;
+  font-weight: bold;
+  background-color: $dark-blue;
+  &:hover {
+    color: $dark-blue;
+    background-color: white;
+  }
+
+}
+
+.register__btn-cancel {
+  color: $site-text-color;
+  font-weight: bold;
+}
