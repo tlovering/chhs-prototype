@@ -7,10 +7,13 @@
     <h4>SIGN IN</h4>
   </div>
   <%--<sec:authorize access="isAnonymous()">--%>
-    <form class="login__form">
-      <input class="form-control" type="text" placeholder="Email"/>
-      <input class="form-control" type="password" placeholder="Password"/>
-      <button type="submit" class="btn btn-default">Log In</button>
+  <div class="login__alert alert alert-danger" role="alert" ng-if="login.error">
+    Incorrect username or password.
+  </div>
+  <form class="login__form">
+      <input class="form-control" type="text" placeholder="Email" ng-model="login.auth.email"/>
+      <input class="form-control" type="password" placeholder="Password" ng-model="login.auth.password"/>
+      <button type="submit" class="btn btn-default" ng-click="login.login()">Log In</button>
     </form>
   <%--</sec:authorize>--%>
 </div>
