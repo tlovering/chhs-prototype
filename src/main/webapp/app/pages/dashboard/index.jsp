@@ -10,7 +10,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-6">
-      <div class="chhs-locator"></div>
+      <div class="foster-home-locator"></div>
     </div>
     <div class="col-sm-6">
       <div class="chhs-messenger"></div>

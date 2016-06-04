@@ -1,9 +1,9 @@
 'use strict';
 
-angular.module('chhs').directive('chhsLocator', function (fosterHomesFactory) {
+angular.module('chhs').directive('fosterHomeLocator', function (fosterHomesFactory) {
   return {
     restrict: 'C',
-    templateUrl: 'app/directives/chhs-locator/index.jsp',
+    templateUrl: 'app/directives/foster-home-locator/index.jsp',
     controller: function ($scope) {
 
       // Initialize data
