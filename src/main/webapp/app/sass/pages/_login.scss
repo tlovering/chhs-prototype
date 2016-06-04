@@ -31,9 +31,16 @@
     color: white;
   }
 
-  @media(min-width: $main-medium){
+  @media(min-width: $main-medium) {
     width: 30%;
     margin: 40px auto;
   }
 
+}
+
+.login__alert {
+  @media(min-width: $main-medium) {
+    width: 30%;
+    margin: 0 auto;
+  }
 }
