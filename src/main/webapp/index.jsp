@@ -43,7 +43,7 @@
     <script src="app/directives/site-header/index.js"></script>
     <script src="app/directives/site-footer/index.js"></script>
     <script src="app/directives/foster-home-locator/index.js"></script>
-    <script src="app/directives/chhs-messenger/index.js"></script>
+    <script src="app/directives/case-worker-messenger/index.js"></script>
     <!-- endbuild -->
 
   </body>

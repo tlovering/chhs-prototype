@@ -13,7 +13,7 @@
       <div class="foster-home-locator"></div>
     </div>
     <div class="col-sm-6">
-      <div class="chhs-messenger"></div>
+      <div class="case-worker-messenger"></div>
     </div>
   </div>
 </div>
