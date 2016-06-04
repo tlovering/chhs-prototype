@@ -3,5 +3,20 @@
   border: none;
   margin: 0 auto;
   max-width: $site-width;
+  height: 75px;
 }
 
+.site-header__collapse {
+  height: 75px;
+  padding-top: 10px;
+}
+
+.site-header__logo {
+  height: 40px;
+}
+
+.site-header__navbar-header{
+  button {
+    margin-top: 15px;
+  }
+}
