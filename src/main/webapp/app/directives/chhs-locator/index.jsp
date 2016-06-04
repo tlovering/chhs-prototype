@@ -5,7 +5,7 @@
 <h2>Foster Home Locator</h2>
 
 <div class="chhs-locator__search-input">
-  <form>
+  <form class="form-inline">
     <input type="text" class="form-control" placeholder="Enter zip code">
     <input type="text" class="form-control" placeholder="100 mile radius">
     <button type="submit" class="btn btn-primary">Locate</button>
