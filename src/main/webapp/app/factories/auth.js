@@ -2,9 +2,9 @@
  * Created by rcharow on 6/4/16.
  */
 angular.module('chhs').factory('Auth', function($http,$log) {
-  var login = function (username, password) {
+  var login = function (email, password) {
     var authRequest = {
-      username: username,
+      email: email,
       password: password
     };
     $log.info('Attempting login request...');
@@ -18,14 +18,9 @@ angular.module('chhs').factory('Auth', function($http,$log) {
 
   }
 
-  var getUserAccount = function(){
-    return $http.get('/api/account').then(function (response) {
-      return response.data;
-    })
-  }
+
 
   return {
-    login: login,
-    getUserAccount: getUserAccount
+    login: login
   };
 });
