@@ -7,6 +7,11 @@ angular.module('chhs').config(function ($routeProvider) {
       controller: 'homeCtrl',
       controllerAs: 'home'
     })
+    .when('/register', {
+      templateUrl: '/app/pages/register/index.jsp',
+      controller: 'registerCtrl',
+      controllerAs: 'register'
+    })
     .when('/login', {
       templateUrl: '/app/pages/login/index.jsp',
       controller: 'loginCtrl',
@@ -16,6 +21,11 @@ angular.module('chhs').config(function ($routeProvider) {
       templateUrl: '/app/pages/dashboard/index.jsp',
       controller: 'dashboardCtrl',
       controllerAs: 'dashboard'
+    })
+    .when('/support', {
+      templateUrl: '/app/pages/support/index.jsp',
+      controller: 'supportCtrl',
+      controllerAs: 'support'
     })
     .otherwise({
       redirectTo: '/'
