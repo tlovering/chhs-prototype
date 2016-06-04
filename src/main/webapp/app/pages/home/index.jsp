@@ -4,7 +4,7 @@
 
 <%--<p ng-if="home.account">Welcome {{home.account.firstName}} {{home.account.lastName}}</p>--%>
 <%--Secured item.--%>
-<div class="page-home container-fluid">
+<div class="page-home container">
 
   <div class="page-home__banner">
     <img class="page-home__banner-image" src="app/assets/home/home-banner.png">
