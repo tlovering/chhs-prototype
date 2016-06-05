@@ -1,6 +1,7 @@
 'use strict';
 
-angular.module('chhs').controller('registerCtrl', function ($log,$location, Account) {
+angular.module('chhs').controller('registerCtrl', function ($log,$location, $cookies, Account) {
+  if($cookies.get('Token')) $location.path('/dashboard');
 
   var register = this;
   register.data = {};

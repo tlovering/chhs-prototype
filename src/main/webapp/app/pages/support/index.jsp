@@ -2,7 +2,8 @@
 
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
-
-<sec:authorize access="isAnonymous()">
-  Support!
-</sec:authorize>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">Support page</div>
+  </div>
+</div>

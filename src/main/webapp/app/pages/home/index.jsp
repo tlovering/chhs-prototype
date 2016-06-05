@@ -2,8 +2,6 @@
 
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
-<%--<p ng-if="home.account">Welcome {{home.account.firstName}} {{home.account.lastName}}</p>--%>
-<%--Secured item.--%>
 <div class="page-home container">
 
   <div class="site-banner"></div>

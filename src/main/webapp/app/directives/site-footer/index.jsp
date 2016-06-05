@@ -12,8 +12,10 @@
     <div class="site-footer__info col-sm-2">
       <ul class="list-unstyled">
         <li><a class="site-footer__link" href="#/home">Home</a></li>
+        <sec:authorize access="isAnonymous">
         <li><a class="site-footer__link" href="#/register">Create Account</a></li>
         <li><a class="site-footer__link" href="#/login">Sign In</a></li>
+        </sec:authorize>
         <li><a class="site-footer__link" href="#/support">Help</a></li>
       </ul>
     </div>

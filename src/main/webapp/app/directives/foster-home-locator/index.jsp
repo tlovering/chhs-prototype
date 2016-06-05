@@ -2,26 +2,28 @@
 
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
-<h2>Foster Home Locator</h2>
 
-<div class="foster-home-locator__search-input">
-  <form class="form-inline">
-    <div class="foster-home-locator__search-input-controls">
-      <input type="text" class="form-control" placeholder="Enter zip code" ng-model="zip">
-      <input type="text" class="form-control" placeholder="100 mile radius" ng-model="distance">
-      <button type="submit" class="btn btn-primary" ng-click="searchFosterHomes(zip, distance)">Locate</button>
-      <button type="button" class="btn btn-primary" ng-click="resetFosterHomes()">Reset</button>
-    </div>
-  </form>
-</div>
+<sec:authorize access="isAuthenticated()">
+  <h2>Foster Home Locator</h2>
 
-<div class="foster-home-locator__search-map">
-  <ui-gmap-google-map center='mapSettings.center' zoom='mapSettings.zoom'>
-    <ui-gmap-marker ng-repeat="location in results" idKey="location.id" coords="{ latitude: location.lat, longitude: location.long }"></ui-gmap-marker>
-  </ui-gmap-google-map>
-</div>
+  <div class="foster-home-locator__search-input">
+    <form class="form-inline">
+      <div class="foster-home-locator__search-input-controls">
+        <input type="text" class="form-control" placeholder="Enter zip code" ng-model="zip">
+        <input type="text" class="form-control" placeholder="100 mile radius" ng-model="distance">
+        <button type="submit" class="btn btn-primary" ng-click="searchFosterHomes(zip, distance)">Locate</button>
+        <button type="button" class="btn btn-primary" ng-click="resetFosterHomes()">Reset</button>
+      </div>
+    </form>
+  </div>
 
-<div class="foster-home-locator__search-results">
+  <div class="foster-home-locator__search-map">
+    <ui-gmap-google-map center='mapSettings.center' zoom='mapSettings.zoom'>
+      <ui-gmap-marker ng-repeat="location in results" idKey="location.id" coords="{ latitude: location.lat, longitude: location.long }"></ui-gmap-marker>
+    </ui-gmap-google-map>
+  </div>
+
+  <div class="foster-home-locator__search-results">
   <table class="table">
     <thead>
       <tr>
@@ -52,3 +54,4 @@
   </table>
 
 </div>
+</sec:authorize>
