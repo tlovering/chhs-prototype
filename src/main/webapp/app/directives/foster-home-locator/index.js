@@ -6,16 +6,23 @@ angular.module('chhs').directive('fosterHomeLocator', function (fosterHomesFacto
     templateUrl: 'app/directives/foster-home-locator/index.jsp',
     controller: function ($scope) {
 
-      // Initialize data
-      $scope.zip = '';
-      $scope.proximity = '';
-      $scope.mapSettings = {
+      var defaultSearchState = {
+        zip: '',
+        proximity: ''
+      };
+
+      var defaultMapState = {
         center: {
           latitude: 37.1870327,
           longitude: -119.7638647
         },
         zoom: 5
       };
+
+      // Initialize data
+      $scope.results = [];
+      $scope.search = angular.copy(defaultSearchState);
+      $scope.map = angular.copy(defaultMapState);
 
       // Initialize async data
       fosterHomesFactory.getFosterHomes().then(function (fosterHomes) {
@@ -31,6 +38,8 @@ angular.module('chhs').directive('fosterHomeLocator', function (fosterHomesFacto
 
       $scope.resetFosterHomes = function () {
         fosterHomesFactory.getFosterHomes().then(function (fosterHomes) {
+          $scope.search = angular.copy(defaultSearchState);
+          // $scope.map = angular.copy(defaultMapState);
           $scope.results = fosterHomes;
         });
       };

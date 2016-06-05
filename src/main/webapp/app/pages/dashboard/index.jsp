@@ -3,7 +3,7 @@
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <sec:authorize access="isAuthenticated()">
-  <div class="container">
+  <div class="page-dashboard container">
     <div class="row">
       <div class="col-sm-6">
         <div class="foster-home-locator"></div>
