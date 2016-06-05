@@ -36,8 +36,10 @@
   <%--</sec:authorize>--%>
 
   <div class="row">
-    <div class="login__divider-line col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-4">
-      <span class="login__divider-text ">OR</span>
+    <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-4">
+      <div class="login__divider-line">
+        <span class="login__divider-text ">OR</span>
+      </div>
     </div>
   </div>
 
