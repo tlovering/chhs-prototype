@@ -31,4 +31,14 @@
   &:hover {
     background-color: darken($blue-2, 5%);
   }
+
+  &:active, &:focus, &:disabled {
+    background-color: $blue-2;
+    border-color: darken($blue-2, 5%);
+  }
+}
+
+
+.register__success {
+  color: $blue-3;
 }
