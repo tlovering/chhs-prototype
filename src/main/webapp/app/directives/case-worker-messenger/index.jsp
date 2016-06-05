@@ -8,7 +8,7 @@
 
   <div class="case-worker-messenger__messages panel">
     <div class="case-worker-messenger__messages-content panel-body">
-      <ul class="case-worker-messenger__messages-list list-group">
+      <ul class="case-worker-messenger__messages-list list-group" ng-if="messages.length > 0">
         <li class="case-worker-messenger__message list-group-item" ng-repeat="message in messages">
           <span class="case-worker-messenger__message-date pull-right">{{ message.date | date : 'MM/dd/yyyy' }}</span>
           <a href class="case-worker-messenger__message-control pull-right" ng-click="replyTo(message.toId, message.fromId)">Reply</a>
@@ -16,6 +16,9 @@
           <p class="case-worker-messenger__message-contents">{{ message.message }}</p>
         </li>
       </ul>
+      <div ng-if="messages.length == 0">
+        <p class="case-worker-messenger__messages-empty text-center">You have no messages.</p>
+      </div>
     </div>
   </div>
 
