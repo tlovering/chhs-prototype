@@ -15,6 +15,6 @@
 </div>
 <div class="site-account-cta__cell site-account-cta__description site-account-cta__description--register col-md-5">
   <div class="site-account-cta__content">
-    <a href="/" class="site-account-cta__cell-link">Create an account</a> to find and communicate with foster homes in your area.
+    <a href="#/register" class="site-account-cta__cell-link">Create an account</a> to find and communicate with foster homes in your area.
   </div>
 </div>
