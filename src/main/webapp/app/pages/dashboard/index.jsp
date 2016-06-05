@@ -4,6 +4,8 @@
 
 <sec:authorize access="isAuthenticated()">
   <div class="page-dashboard container">
+    <h4 class="page-dashboard__header">My Dashboard</h4>
+
     <div class="row">
       <div class="col-sm-6">
         <div class="foster-home-locator"></div>

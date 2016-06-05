@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "fromName": "Case Worker",
+    "fromId": "1",
+    "toName": "Me",
+    "toId": "2",
+    "date": 1465147736364,
+    "message": "Hello World!"
+  },
+  {
+    "id": "2",
+    "fromName": "Me",
+    "fromId": "2",
+    "toName": "Case Worker",
+    "toId": "1",
+    "date": 1465147736364,
+    "message": "Alo!"
+  }
+]
