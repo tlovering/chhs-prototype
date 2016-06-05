@@ -6,11 +6,7 @@
 <%--Secured item.--%>
 <div class="page-home container">
 
-  <div class="page-home__banner">
-    <img class="page-home__banner-image" src="app/assets/home/home-banner.png">
-    <h2 class="page-home__banner-slogan">Connecting families</h2>
-    <h2 class="page-home__banner-slogan">with foster caregivers.</h2>
-  </div>
+  <div class="site-banner"></div>
 
   <sec:authorize access="isAnonymous()">
     <section class="secondary-nav container-fluid">

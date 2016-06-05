@@ -1,0 +1,17 @@
+.site-banner {
+  position: relative;
+}
+
+.site-banner__image{
+  display: block;
+  width: 100%;
+}
+
+.site-banner__slogan{
+  position: absolute;
+  top: 50px;
+  right: 10%;
+  color: black;
+  margin-top: 0;
+  font-style: italic;
+}
