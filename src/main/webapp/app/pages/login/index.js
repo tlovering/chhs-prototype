@@ -6,7 +6,7 @@ angular.module('chhs').controller('loginCtrl', function ($http, $log, $location,
 
 
   this.login = function () {
-    Auth.login(login.auth)
+    Auth.login(login.auth.email, login.auth.password)
       .then(function () {
         $location.path('home');
         login.error = false;
