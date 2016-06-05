@@ -17,6 +17,9 @@
         <li><a class="site-footer__link" href="#/login">Sign In</a></li>
         </sec:authorize>
         <li><a class="site-footer__link" href="#/support">Help</a></li>
+        <sec:authorize access="isAuthenticated()">
+          <li><a class="site-footer__link" href="#/logout">Sign Out</a></li>
+        </sec:authorize>
       </ul>
     </div>
     <div class="site-footer__info col-sm-7">
