@@ -1,20 +1,18 @@
 [
   {
     "id": "1",
-    "fromName": "Case Worker",
-    "fromId": "1",
-    "toName": "Me",
-    "toId": "2",
+    "caseWorkerId": "1",
+    "caseWorkerName": "Alice",
     "date": 1465147736364,
-    "message": "Hello World!"
+    "sender": "CASEWORKER",
+    "message": "Hello User!"
   },
   {
     "id": "2",
-    "fromName": "Me",
-    "fromId": "2",
-    "toName": "Case Worker",
-    "toId": "1",
+    "caseWorkerId": "1",
+    "caseWorkerName": "Alice",
     "date": 1465147736364,
-    "message": "Alo!"
+    "sender": "USER",
+    "message": "Alo Case Worker"
   }
 ]

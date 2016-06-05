@@ -3,67 +3,58 @@ package com.portlandwebworks.chhs.messages.model;
 import java.util.Date;
 
 public class Message {
-	private String id;
-	private String fromName;
-	private String fromId;
-	private String toName;
-	private String toId;
-	private Date date;
-	private String message;
+    private String id;
+    private String caseWorkerId;
+    private String caseWorkerName;
+    private String sender;
+    private Date date;
+    private String message;
 
-	public String getId() {
-		return id;
-	}
+    public String getId() {
+        return id;
+    }
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	public String getFromName() {
-		return fromName;
-	}
+    public String getCaseWorkerId() {
+        return caseWorkerId;
+    }
 
-	public void setFromName(String fromName) {
-		this.fromName = fromName;
-	}
+    public void setCaseWorkerId(String caseWorkerId) {
+        this.caseWorkerId = caseWorkerId;
+    }
 
-	public String getFromId() {
-		return fromId;
-	}
+    public String getCaseWorkerName() {
+        return caseWorkerName;
+    }
 
-	public void setFromId(String fromId) {
-		this.fromId = fromId;
-	}
+    public void setCaseWorkerName(String caseWorkerName) {
+        this.caseWorkerName = caseWorkerName;
+    }
 
-	public String getToName() {
-		return toName;
-	}
+    public String getSender() {
+        return sender;
+    }
 
-	public void setToName(String toName) {
-		this.toName = toName;
-	}
+    public void setSender(String sender) {
+        this.sender = sender;
+    }
 
-	public String getToId() {
-		return toId;
-	}
+    public Date getDate() {
+        return date;
+    }
 
-	public void setToId(String toId) {
-		this.toId = toId;
-	}
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
-	public Date getDate() {
-		return date;
-	}
+    public String getMessage() {
+        return message;
+    }
 
-	public void setDate(Date date) {
-		this.date = date;
-	}
-
-	public String getMessage() {
-		return message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
+    public void setMessage(String message) {
+        this.message = message;
+    }
 }

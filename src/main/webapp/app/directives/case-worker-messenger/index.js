@@ -8,8 +8,7 @@ angular.module('chhs').directive('caseWorkerMessenger', function (messagesFactor
 
       $scope.messages = [];
       $scope.userMessage = {
-        to: '',
-        from: '',
+        caseWorkerId: '',
         message: ''
       };
 
@@ -17,16 +16,23 @@ angular.module('chhs').directive('caseWorkerMessenger', function (messagesFactor
         $scope.messages = messages;
       });
 
-      $scope.sendMessage = function (from, to, message) {
-        messagesFactory.sendMessage(from, to, message).then(function () {
+      $scope.sendMessage = function (caseWorkerId, message) {
+        messagesFactory.sendMessage(caseWorkerId, message).then(function () {
           $scope.userMessage = {};
           $scope.caseWorkerMessageForm.$setPristine();
         });
       };
 
-      $scope.replyTo = function (from, to) {
-        $scope.userMessage.from = from;
-        $scope.userMessage.to = to;
+      $scope.replyToMessage = function (caseWorkerId) {
+        $scope.userMessage.caseWorkerId = caseWorkerId;
+      };
+
+      $scope.deleteMessage = function (id) {
+        // TODO
+      };
+
+      $scope.resetMessage = function(){
+        $scope.userMessage = {};
       };
 
     }
