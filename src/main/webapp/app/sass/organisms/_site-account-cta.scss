@@ -1,3 +1,7 @@
+.site-account-cta{
+  @include clearfix;
+}
+
 .site-account-cta__cell {
   color: white;
   height: 75px;
