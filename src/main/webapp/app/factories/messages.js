@@ -68,7 +68,14 @@ angular.module('chhs').factory('messagesFactory', function ($http, $log, $q) {
     });
   }
 
+  function sendMessage(recepient, message){
+    return $q(function(resolve, reject){
+      resolve('');
+    });
+  }
+
   return {
-    getMessages: getMessages
+    getMessages: getMessages,
+    sendMessage: sendMessage
   };
 });

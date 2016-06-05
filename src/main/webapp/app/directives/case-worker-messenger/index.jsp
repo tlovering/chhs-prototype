@@ -14,18 +14,18 @@
 </ul>
 
 <div class="case-worker-messenger__composer">
-  <form>
+  <form name="caseWorkerMessageForm" ng-submit="sendMessage(userMessage.recepient, userMessage.message)">
     <div class="form-group">
       <div class="input-group">
         <span class="input-group-addon">To:</span>
-        <input type="text" class="form-control" placeholder="Recepient">
+        <input type="text" name="recepient" class="form-control" placeholder="Recepient" ng-model="userMessage.recepient" ng-required="true">
       </div>
     </div>
     <div class="form-group">
-      <textarea class="case-worker-messenger__composer-textarea form-control" rows="15"></textarea>
+      <textarea class="case-worker-messenger__composer-textarea form-control" name="message" rows="15" ng-model="userMessage.message" ng-required="true"></textarea>
     </div>
     <div class="form-group">
-      <button type="submit" class="btn btn-primary">Send</button>
+      <button type="submit" class="btn btn-primary" ng-disabled="caseWorkerMessageForm.$invalid">Send</button>
     </div>
   </form>
 </div>
