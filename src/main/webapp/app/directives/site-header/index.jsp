@@ -17,10 +17,13 @@
     <div class="site-header__collapse collapse navbar-collapse" id="topNav">
       <ul class="site_header__links nav navbar-nav navbar-right">
         <sec:authorize access="isAnonymous()">
-        <li><a href="#/register">CREATE ACCOUNT</a></li>
-        <li><a href="#/login">LOGIN</a></li>
+          <li><a href="#/register">CREATE ACCOUNT</a></li>
+          <li><a href="#/login">SIGN IN</a></li>
         </sec:authorize>
         <li><a href="#/support">HELP</a></li>
+        <sec:authorize access="isAuthenticated()">
+          <li><a href="#/logout">LOGOUT</a></li>
+        </sec:authorize>
       </ul>
     </div>
   </div>
