@@ -34,10 +34,19 @@ public class AdoptionCenterResource {
 	public AdoptionCenterResource(ObjectMapper mapper) {
 		this.mapper = mapper;
 	}
-	
+
 	@GET
-	@Path("/{postalCode}")
-	public List<AdoptionCenter> nearMe(@PathParam("postalCode") String postalCode) throws IOException{
+	public List<AdoptionCenter> get() throws IOException{
+		log.debug("Getting all adoption centers");
+		InputStream sample = getClass().getClassLoader().getResourceAsStream("sample-centers.json");
+		List<AdoptionCenter> centers = mapper.readValue(sample, new TypeReference<List<AdoptionCenter>>() {});
+		return centers;
+	}
+
+	@GET
+	@Path("/{postalCode}/{proximity}")
+	public List<AdoptionCenter> nearMe(@PathParam("postalCode") String postalCode, @PathParam("proximity") String proximity) throws IOException{
+		// TODO: Implement proximity search
 		log.debug("Looking for adoption centers near: {}", postalCode);
 		InputStream sample = getClass().getClassLoader().getResourceAsStream("sample-centers.json");
 		List<AdoptionCenter> centers = mapper.readValue(sample, new TypeReference<List<AdoptionCenter>>() {});

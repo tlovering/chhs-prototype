@@ -1,3 +1,35 @@
+.case-worker-messenger__messages{
+  max-height: 500px;
+  overflow: scroll;
+  border: 1px solid $gray-3;
+  padding: 0;
+}
+
+.case-worker-messenger__messages-content{
+  padding: 0;
+}
+
+.case-worker-messenger__messages-list{
+  margin: 0;
+}
+
+.case-worker-messenger__message{
+  border: 0;
+  border-top: 1px solid $gray-3;
+  position: static;
+
+  &:first-child{
+    border: 0;
+    border-radius: 5px;
+  }
+
+  &:last-child{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+}
+
+
 .case-worker-messenger__message-sender{
   font-weight: bold;
 }
