@@ -4,6 +4,6 @@
 
 <img class="site-banner__image" src="app/assets/home/home-banner.png">
 <div class="site-banner__slogan">
-  <h2>Connecting families</h2>
-  <h2>with foster caregivers.</h2>
+  <h2 class="site-banner__slogan-text">Connecting families</h2>
+  <h2 class="site-banner__slogan-text">with foster caregivers.</h2>
 </div>
