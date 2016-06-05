@@ -3,49 +3,6 @@
   top: 100px;
 }
 
-
-
-.page-home__info-col {
-  height: 75px;
-  color: white;
-
-  a {
-    color: $blue-1;
-    font-weight: bold;
-    text-decoration: underline;
-  }
-
-  p, div {
-    width: 70%;
-    margin: 0 auto;
-  }
-
-  div {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-}
-
-.page-home__info-col-account-btn {
-  background-color: $blue-2;
-  text-align: center;
-}
-
-.page-home__info-col-account-info {
-  background-color: $blue-3;
-}
-
-.page-home__info-col-login-btn {
-  background-color: $green-1;
-  text-align: center;
-}
-
-.page-home__info-col-login-info {
-  background-color: $green-2;
-}
-
 .page-home__summary {
   margin-top: 20px;
 }

@@ -9,27 +9,7 @@
   <div class="site-banner"></div>
 
   <sec:authorize access="isAnonymous()">
-    <section class="secondary-nav container-fluid">
-      <div class="row">
-        <div class="page-home__info-col page-home__info-col-login-btn col-md-1">
-          <div>LOG IN</div>
-        </div>
-        <div class="page-home__info-col page-home__info-col-login-info col-md-5">
-          <div>
-            <p><a href="#/login">Sign in</a> to find and communicate with foster homes in your area.</p>
-          </div>
-        </div>
-        <div class="page-home__info-col page-home__info-col-account-btn col-md-1">
-          <div>NEW ACCOUNT</div>
-        </div>
-        <div class="page-home__info-col page-home__info-col-account-info col-md-5">
-          <div>
-            <p><a href="/">Create an account</a> to find and communicate with foster homes in your area.</p>
-          </div>
-        </div>
-
-      </div>
-    </section>
+    <div class="site-account-cta"></div>
   </sec:authorize>
 
   <section class="page-home__summary">

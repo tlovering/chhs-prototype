@@ -45,6 +45,7 @@
     <script src="app/directives/foster-home-locator/index.js"></script>
     <script src="app/directives/case-worker-messenger/index.js"></script>
     <script src="app/directives/site-banner/index.js"></script>
+    <script src="app/directives/site-account-cta/index.js"></script>
     <!-- endbuild -->
 
   </body>
