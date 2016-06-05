@@ -7,10 +7,12 @@
   <h2>Foster Home Locator</h2>
 
   <div class="foster-home-locator__search-input">
-    <form class="form-inline">
-      <input type="text" class="foster-home-locator__search-input-control form-control" placeholder="Enter zip code" ng-model="search.zip">
-      <input type="text" class="foster-home-locator__search-input-control form-control" placeholder="100 mile radius" ng-model="search.proximity">
-      <button type="submit" class="foster-home-locator__search-input-control btn btn-primary" ng-click="searchFosterHomes(search.zip, search.proximity)">Locate</button>
+    <form class="form-inline" name="fosterHomeLocatorForm" ng-click="searchFosterHomes(search.zip, search.proximity)">
+      <label class="sr-only" for="foster-home-locator__zip-input">Zip Code:</label>
+      <input type="number" name="zip" id="foster-home-locator__zip-input" class="foster-home-locator__search-input-control form-control" placeholder="Zip Code" ng-model="search.zip">
+      <label class="sr-only" for="foster-home-locator__proximity-input">Proximity (in miles):</label>
+      <input type="number" name="proximity" id="foster-home-locator__proximity-input" class="foster-home-locator__search-input-control form-control" placeholder="Proximity (in miles)" ng-model="search.proximity">
+      <button type="submit" class="foster-home-locator__search-input-control btn btn-primary" ng-disabled="!search.zip && !search.proximity">Locate</button>
       <button type="button" class="foster-home-locator__search-input-control btn btn-primary" ng-click="resetFosterHomes()">Reset</button>
     </form>
   </div>
