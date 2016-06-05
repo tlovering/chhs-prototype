@@ -7,13 +7,15 @@ angular.module('chhs').factory('Auth', function($http,$log,$cookies) {
       email: email,
       password: password
     };
+
     $log.info('Attempting login request...');
 
     return $http.post('/login', authRequest)
       .then(function (response) {
         return response.data;
-      }, function () {
+      }, function (e) {
         $log.error('Error during login.');
+        throw e;
       });
 
   }
