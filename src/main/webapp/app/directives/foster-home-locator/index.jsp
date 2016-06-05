@@ -10,8 +10,8 @@
     <form class="form-inline">
       <div class="foster-home-locator__search-input-controls">
         <input type="text" class="form-control" placeholder="Enter zip code" ng-model="zip">
-        <input type="text" class="form-control" placeholder="100 mile radius" ng-model="distance">
-        <button type="submit" class="btn btn-primary" ng-click="searchFosterHomes(zip, distance)">Locate</button>
+        <input type="text" class="form-control" placeholder="100 mile radius" ng-model="proximity">
+        <button type="submit" class="btn btn-primary" ng-click="searchFosterHomes(zip, proximity)">Locate</button>
         <button type="button" class="btn btn-primary" ng-click="resetFosterHomes()">Reset</button>
       </div>
     </form>
@@ -19,7 +19,7 @@
 
   <div class="foster-home-locator__search-map">
     <ui-gmap-google-map center='mapSettings.center' zoom='mapSettings.zoom'>
-      <ui-gmap-marker ng-repeat="location in results" idKey="location.id" coords="{ latitude: location.lat, longitude: location.long }"></ui-gmap-marker>
+      <ui-gmap-marker ng-repeat="location in results" idKey="location.id" coords="{ latitude: location.lat, longitude: location.lng }"></ui-gmap-marker>
     </ui-gmap-google-map>
   </div>
 

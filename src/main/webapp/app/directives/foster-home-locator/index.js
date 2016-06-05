@@ -8,7 +8,7 @@ angular.module('chhs').directive('fosterHomeLocator', function (fosterHomesFacto
 
       // Initialize data
       $scope.zip = '';
-      $scope.distance = '';
+      $scope.proximity = '';
       $scope.mapSettings = {
         center: {
           latitude: 37.1870327,
@@ -23,8 +23,8 @@ angular.module('chhs').directive('fosterHomeLocator', function (fosterHomesFacto
       });
 
       // Exposed functions
-      $scope.searchFosterHomes = function (zip, distance) {
-        fosterHomesFactory.searchFosterHomes(zip, distance).then(function (fosterHomes) {
+      $scope.searchFosterHomes = function (zip, proximity) {
+        fosterHomesFactory.searchFosterHomes(zip, proximity).then(function (fosterHomes) {
           $scope.results = fosterHomes;
         });
       };
