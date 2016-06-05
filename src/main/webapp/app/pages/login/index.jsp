@@ -29,7 +29,7 @@
             <input class="form-control" type="password" id="password" placeholder="Password" ng-model="login.auth.password"/>
           </div>
           <div class="form-group">
-            <button type="submit" class="btn btn-primary form-control" ng-click="login.login()">LOG IN</button>
+            <button type="submit" class="btn btn-primary form-control" ng-click="login.login()">SIGN IN</button>
           </div>
         </form>
       </div>
@@ -47,7 +47,7 @@
 
     <div class="row">
       <div class="col-sm-4 col-sm-offset-4">
-        <a href="#/register" class="btn btn-default form-control">CREATE NEW ACCOUNT</a>
+        <a href="#/register" class="login__create-account btn btn-default form-control">CREATE NEW ACCOUNT</a>
       </div>
     </div>
 
