@@ -1,7 +1,7 @@
 /**
  * Created by rcharow on 6/4/16.
  */
-angular.module('chhs').factory('Auth', function($http,$log) {
+angular.module('chhs').factory('Auth', function($http,$log,$cookies) {
   var login = function (email, password) {
     var authRequest = {
       email: email,
@@ -18,9 +18,13 @@ angular.module('chhs').factory('Auth', function($http,$log) {
 
   }
 
+  var loggedIn = function(){
+    return !!$cookies.get('Token');
+  }
 
 
   return {
-    login: login
+    login: login,
+    loggedIn: loggedIn
   };
 });
