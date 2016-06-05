@@ -49,7 +49,7 @@
             <p class="foster-home-locator__result-number">{{ location.number }}</p>
           </td>
         </tr>
-        <tr ng-hide="results.length > 0">
+        <tr ng-if="results.length == 0">
           <td colspan="3" align="center">No foster homes found.</td>
         </tr>
       </tbody>
