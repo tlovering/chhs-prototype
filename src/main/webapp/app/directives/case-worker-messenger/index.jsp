@@ -6,29 +6,10 @@
 
 
 <ul class="case-worker-messenger__messages list-group">
-  <li class="case-worker-messenger__message list-group-item">
-    <p class="case-worker-messenger__message-sender">From: Case Worker</p>
-    <p class="case-worker-messenger__message-contents">Hello World</p>
-  </li>
-  <li class="case-worker-messenger__message list-group-item">
-    <p class="case-worker-messenger__message-sender">From: Case Worker</p>
-    <p class="case-worker-messenger__message-contents">Hello World</p>
-  </li>
-  <li class="case-worker-messenger__message list-group-item">
-    <p class="case-worker-messenger__message-sender">From: Case Worker</p>
-    <p class="case-worker-messenger__message-contents">Hello World</p>
-  </li>
-  <li class="case-worker-messenger__message list-group-item">
-    <p class="case-worker-messenger__message-sender">From: Case Worker</p>
-    <p class="case-worker-messenger__message-contents">Hello World</p>
-  </li>
-  <li class="case-worker-messenger__message list-group-item">
-    <p class="case-worker-messenger__message-sender">From: Case Worker</p>
-    <p class="case-worker-messenger__message-contents">Hello World</p>
-  </li>
-  <li class="case-worker-messenger__message list-group-item">
-    <p class="case-worker-messenger__message-sender">From: Case Worker</p>
-    <p class="case-worker-messenger__message-contents">Hello World</p>
+  <li class="case-worker-messenger__message list-group-item" ng-repeat="message in messages">
+    <span class="case-worker-messenger__composer-date pull-right">{{ message.date | date : 'MM/dd/yyyy' }}</span>
+    <p class="case-worker-messenger__message-sender">{{ message.from }} to {{ message.to }}</p>
+    <p class="case-worker-messenger__message-contents">{{ message.message }}</p>
   </li>
 </ul>
 
