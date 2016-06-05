@@ -1,8 +1,6 @@
 'use strict';
 
 angular.module('chhs').controller('loginCtrl', function ($http, $log, $location, $window, $cookies, Auth) {
-  if($cookies.get('Token')) $location.path('/dashboard');
-
   var login = this;
 
 

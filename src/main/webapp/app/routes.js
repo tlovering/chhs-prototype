@@ -10,17 +10,38 @@ angular.module('chhs').config(function ($routeProvider) {
     .when('/register', {
       templateUrl: '/app/pages/register/index.jsp',
       controller: 'registerCtrl',
-      controllerAs: 'register'
+      controllerAs: 'register',
+      resolve: {
+        loggedIn: function($location, Auth){
+          if(Auth.loggedIn()){
+            $location.path('/dashboard');
+          }
+        }
+      }
     })
     .when('/login', {
       templateUrl: '/app/pages/login/index.jsp',
       controller: 'loginCtrl',
-      controllerAs: 'login'
+      controllerAs: 'login',
+      resolve: {
+        loggedIn: function($location, Auth){
+          if(Auth.loggedIn()){
+            $location.path('/dashboard');
+          }
+        }
+      }
     })
     .when('/dashboard', {
       templateUrl: '/app/pages/dashboard/index.jsp',
       controller: 'dashboardCtrl',
-      controllerAs: 'dashboard'
+      controllerAs: 'dashboard',
+      resolve: {
+        loggedIn: function($location, Auth){
+          if(!Auth.loggedIn()){
+            $location.path('/login');
+          }
+        }
+      }
     })
     .when('/support', {
       templateUrl: '/app/pages/support/index.jsp',
