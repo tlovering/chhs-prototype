@@ -22,11 +22,16 @@ angular.module('chhs').factory('Auth', function($http,$log,$cookies) {
 
   var loggedIn = function(){
     return !!$cookies.get('Token');
+  };
+
+  var logout = function(){
+
   }
 
 
   return {
     login: login,
-    loggedIn: loggedIn
+    loggedIn: loggedIn,
+    logout: logout
   };
 });
