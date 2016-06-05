@@ -7,8 +7,12 @@
 
   <%--<sec:authorize access="isAnonymous()">--%>
 
-  <div class="login__alert alert alert-danger" role="alert" ng-if="login.error">
-    Incorrect username or password.
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <div class="alert alert-danger" role="alert" ng-if="login.error">
+        Incorrect username or password.
+      </div>
+    </div>
   </div>
 
   <div class="row">

@@ -13,15 +13,6 @@
   background: linear-gradient(-90deg, $green-2, $green-1); /* Standard syntax */
 }
 
-.login__alert {
-  margin: 0 auto;
-  width: 80%;
-
-  @media(min-width: $screen-md) {
-    width: 30%;
-  }
-}
-
 .login__divider-line{
   border-top: 1px solid black;
   text-align: center;
