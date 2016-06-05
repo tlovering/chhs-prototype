@@ -2,7 +2,7 @@
 
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
-<div class="login">
+<div class="login container">
   <div class="login__header">
     <h4>SIGN IN</h4>
   </div>

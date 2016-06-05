@@ -70,7 +70,7 @@
 
 .page-home__summary-section{
 
-  @media(min-width: $main-medium){
+  @media(min-width: $screen-md){
     border-right: solid 1px #CCC;
 
     &:last-child{
@@ -94,7 +94,7 @@
 
 .page-home__summary-content{
   margin-bottom: 40px;
-  @media(min-width: $main-medium){
+  @media(min-width: $screen-md){
     min-height: 250px;
   }
 }

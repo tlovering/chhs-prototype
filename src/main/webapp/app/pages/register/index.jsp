@@ -4,7 +4,7 @@
 
 
 <%--<sec:authorize access="isAnonymous()">--%>
-<div class="register">
+<div class="register container">
   <div class="register__header">
     <h4>CREATE ACCOUNT</h4>
   </div>
