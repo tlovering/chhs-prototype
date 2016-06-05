@@ -31,6 +31,18 @@ angular.module('chhs').config(function ($routeProvider) {
         }
       }
     })
+    .when('/logout', {
+      templateUrl: '/app/pages/home/index.jsp',
+      controller: 'homeCtrl',
+      controllerAs: 'home',
+      resolve: {
+        logout: function($location, Auth){
+          if(Auth.loggedIn()){
+            Auth.logout();
+          }
+        }
+      }
+    })
     .when('/dashboard', {
       templateUrl: '/app/pages/dashboard/index.jsp',
       controller: 'dashboardCtrl',
