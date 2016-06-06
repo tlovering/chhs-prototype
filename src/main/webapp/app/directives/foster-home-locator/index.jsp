@@ -19,7 +19,7 @@
 
   <div class="foster-home-locator__search-map">
     <ui-gmap-google-map center='map.center' zoom='map.zoom'>
-      <ui-gmap-marker ng-repeat="location in results" idKey="location.id" coords="{ latitude: location.lat, longitude: location.lng }"></ui-gmap-marker>
+      <ui-gmap-marker ng-repeat="location in results" idKey="location.facility_number" coords="{ latitude: location.location.latitude, longitude: location.location.longitude }"></ui-gmap-marker>
     </ui-gmap-google-map>
   </div>
 
@@ -35,18 +35,18 @@
       <tbody>
         <tr ng-repeat="location in results">
           <td>
-            <p class="foster-home-locator__result-name">{{ location.name }}"</p>
+            <p class="foster-home-locator__result-name">{{ location.facility_name }}</p>
             <p class="foster-home-locator__result-address">
-              <span class="foster-home-locator__result-street">{{ location.street }}</span>,
-              <span class="foster-home-locator__result-city">{{ location.city }}</span>,
-              <span class="foster-home-locator__result-state">{{ location.state }}</span>
+              <span class="foster-home-locator__result-street">{{ location.facility_address }}</span>,
+              <span class="foster-home-locator__result-city">{{ location.facility_city }}</span>,
+              <span class="foster-home-locator__result-state">{{ location.facility_state }}</span>
             </p>
           </td>
           <td>
-            <p class="foster-home-locator__result-phone">{{ location.phone }}</p>
+            <p class="foster-home-locator__result-phone">{{ location.facility_telephone_number }}</p>
           </td>
           <td>
-            <p class="foster-home-locator__result-number">{{ location.number }}</p>
+            <p class="foster-home-locator__result-number">{{ location.facility_number }}</p>
           </td>
         </tr>
         <tr ng-if="results.length == 0">
