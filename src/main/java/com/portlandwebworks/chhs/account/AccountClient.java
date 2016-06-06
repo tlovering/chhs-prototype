@@ -16,6 +16,9 @@ public interface  AccountClient {
 	@RequestMapping(method = RequestMethod.GET, path = "/api/account", produces = "application/json", consumes = "application/json")
 	public User getCurrent();
 	
+	@RequestMapping(method = RequestMethod.GET, path = "/api/account/caseworker", produces = "application/json", consumes = "application/json")
+	public User getCaseWorker();
+	
 	@RequestMapping(method = RequestMethod.POST, path = "/api/account", produces = "application/json", consumes = "application/json")
 	public void registerAccount(User account);
 	

@@ -43,6 +43,12 @@ public class AccountResource {
 	public User get() throws IOException {
 		return accountClient.getCurrent();
 	}
+	
+	@GET
+	@Path("/caseworker")
+	public User getCaseWorker() throws IOException {
+		return accountClient.getCaseWorker();
+	}
 
 	@POST
 	public Response register(User user) {
