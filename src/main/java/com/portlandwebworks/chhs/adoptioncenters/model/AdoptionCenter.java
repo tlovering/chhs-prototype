@@ -1,21 +1,31 @@
 package com.portlandwebworks.chhs.adoptioncenters.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.math.BigDecimal;
 
 /**
  *
  * @author nick
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class AdoptionCenter {
+	@JsonProperty("facility_number")
 	private String id;
+	@JsonProperty("facility_name")
 	private String name;
+	@JsonProperty("facility_address")
 	private String street;
+	@JsonProperty("facility_city")
 	private String city;
+	@JsonProperty("facility_state")
 	private String state;
+	@JsonProperty("facility_zip")
+	private String zip;
+	@JsonProperty("facility_telephone_number")
 	private String phone;
-	private String number;
-	private BigDecimal lat;
-	private BigDecimal lng;
+	@JsonProperty("location")
+	private LatLng location;
 
 	public String getId() {
 		return id;
@@ -65,27 +75,19 @@ public class AdoptionCenter {
 		this.phone = phone;
 	}
 
-	public String getNumber() {
-		return number;
+	public String getZip() {
+		return zip;
 	}
 
-	public void setNumber(String number) {
-		this.number = number;
+	public void setZip(String zip) {
+		this.zip = zip;
 	}
 
-	public BigDecimal getLat() {
-		return lat;
+	public LatLng getLocation() {
+		return location;
 	}
 
-	public void setLat(BigDecimal lat) {
-		this.lat = lat;
-	}
-
-	public BigDecimal getLng() {
-		return lng;
-	}
-
-	public void setLng(BigDecimal lng) {
-		this.lng = lng;
+	public void setLocation(LatLng location) {
+		this.location = location;
 	}
 }

@@ -16,6 +16,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
 
 /**
  *
@@ -28,29 +29,25 @@ import org.springframework.stereotype.Component;
 public class AdoptionCenterResource {
 	
 	private final Logger log = LoggerFactory.getLogger(AdoptionCenterResource.class);
-	private final ObjectMapper mapper;
+	private final AdoptionCenterLocator locator;
 
 	@Autowired
-	public AdoptionCenterResource(ObjectMapper mapper) {
-		this.mapper = mapper;
+	public AdoptionCenterResource(AdoptionCenterLocator locator) {
+		this.locator = locator;
 	}
 
 	@GET
 	public List<AdoptionCenter> get() throws IOException{
 		log.debug("Getting all adoption centers");
-		InputStream sample = getClass().getClassLoader().getResourceAsStream("sample-centers.json");
-		List<AdoptionCenter> centers = mapper.readValue(sample, new TypeReference<List<AdoptionCenter>>() {});
-		return centers;
+		return locator.findCentersNear("94203", null);
 	}
 
 	@GET
 	@Path("/{postalCode}/{proximity}")
-	public List<AdoptionCenter> nearMe(@PathParam("postalCode") String postalCode, @PathParam("proximity") String proximity) throws IOException{
+	public List<AdoptionCenter> nearMe(@PathParam("postalCode") String postalCode, @PathParam("proximity") Integer proximity) throws IOException{
 		// TODO: Implement proximity search
 		log.debug("Looking for adoption centers near: {}", postalCode);
-		InputStream sample = getClass().getClassLoader().getResourceAsStream("sample-centers.json");
-		List<AdoptionCenter> centers = mapper.readValue(sample, new TypeReference<List<AdoptionCenter>>() {});
-		return centers;
+		return locator.findCentersNear(postalCode, proximity);
 	}
 	
 }

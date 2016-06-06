@@ -22,7 +22,7 @@
         </sec:authorize>
         <li><a href="#/support">HELP</a></li>
         <sec:authorize access="isAuthenticated()">
-          <li><a href="#/logout">LOGOUT</a></li>
+          <li><a href="/logout">LOGOUT</a></li>
         </sec:authorize>
       </ul>
     </div>

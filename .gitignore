@@ -20,3 +20,4 @@ bower_components
 # Others
 nb-configuration.xml
 node
+/nbproject/

@@ -15,7 +15,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class TokenAuthFilter extends AbstractPreAuthenticatedProcessingFilter {
 
-	private final Logger log = LoggerFactory.getLogger(TokenAuthFilter.class);
+	private static final String TOKEN_NAME = "Token";
+	private static final Logger log = LoggerFactory.getLogger(TokenAuthFilter.class);
 
 	@Autowired
 	public TokenAuthFilter(TokenAuthManager authManager) {
@@ -24,7 +25,7 @@ public class TokenAuthFilter extends AbstractPreAuthenticatedProcessingFilter {
 
 	@Override
 	protected Object getPreAuthenticatedPrincipal(HttpServletRequest hsr) {
-		log.trace("Checking for pre-auth cookie value.");
+		log.debug("Checking for pre-auth cookie value.");
 		if (hsr.getHeader(TOKEN_NAME) != null) {
 			log.trace("Header for pre-auth found.");
 			return hsr.getHeader(TOKEN_NAME);
@@ -39,7 +40,6 @@ public class TokenAuthFilter extends AbstractPreAuthenticatedProcessingFilter {
 		log.trace("No preauth token foundfound.");
 		return null;
 	}
-	private static final String TOKEN_NAME = "Token";
 
 	@Override
 	protected Object getPreAuthenticatedCredentials(HttpServletRequest hsr) {
