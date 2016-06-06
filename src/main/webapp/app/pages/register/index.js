@@ -50,7 +50,7 @@ angular.module('chhs').controller('registerCtrl', function ($log, $location, $co
 
   register.passwordValid = function () {
     var reg = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}/;
-    return reg.test(register.data.password);
+    return reg.test(register.data.newPassword);
   };
 
   register.customValidation = function () {
