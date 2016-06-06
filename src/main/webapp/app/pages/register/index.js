@@ -16,49 +16,45 @@ angular.module('chhs').controller('registerCtrl', function ($log, $location, $co
   register.createAccount = function (isValid) {
     register.submitted = false;
     if (isValid && register.customValidation()) {
-      var accountData = {
-        firstName: register.data.firstName,
-        lastName: register.data.lastName,
-        email: register.data.email,
-        address: register.data.address,
-        city: register.data.city,
-        state: register.data.state,
-        postalcode: register.data.zipcode
-      };
+      var accountData = angular.copy(register.data);
+      accountData.address.country = 'USA';
 
       Account.createAccount(accountData)
         .then(function (response) {
           register.accountCreated = true;
         }, function (e) {
           register.accountError = true;
-        })
+        });
 
     } else {
       register.submitted = true;
     }
-  }
+  };
 
-  register.zipcodeValid = function () {
+  register.postalCodeValid = function () {
     var reg = /^[0-9]{5}(?:-[0-9]{4})?$/;
-    return reg.test(register.data.zipcode);
-  }
+    if (register.data.address !== undefined) {
+      return reg.test(register.data.address.postalCode);
+    } else {
+      return false;
+    }
+  };
 
   register.emailsMatch = function () {
     return register.data.email === register.data.emailre;
-  }
+  };
 
   register.passwordsMatch = function () {
-    return register.data.password === register.data.passwordre;
-  }
+    return register.data.newPassword === register.data.newPasswordConfirmation;
+  };
 
   register.passwordValid = function () {
     var reg = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}/;
     return reg.test(register.data.password);
-  }
+  };
 
   register.customValidation = function () {
-    return register.zipcodeValid() && register.emailsMatch() && register.passwordValid() && register.passwordsMatch();
-  }
-
+    return register.postalCodeValid() && register.emailsMatch() && register.passwordValid() && register.passwordsMatch();
+  };
 
 });

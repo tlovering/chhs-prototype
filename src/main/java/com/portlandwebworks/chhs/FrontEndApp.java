@@ -1,15 +1,18 @@
 package com.portlandwebworks.chhs;
 
+import com.portlandwebworks.chhs.authentication.FeignAuthConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 
 /**
  *
  * @author nick
  */
-@SpringBootApplication
+@SpringBootApplication(exclude = {FeignAuthConfiguration.class})
 @EnableWebSecurity
+@EnableFeignClients
 public class FrontEndApp {
 
 	public static void main(String... args) {

@@ -1,5 +1,6 @@
-angular.module('chhs').factory('messagesFactory', function ($http, $log, $q) {
+'use strict';
 
+angular.module('chhs').factory('messagesFactory', function ($http, $log, $q) {
 
   function getMessages() {
     return $http.get('/api/messages').then(function (response) {

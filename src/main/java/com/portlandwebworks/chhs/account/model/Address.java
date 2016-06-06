@@ -1,9 +1,12 @@
 package com.portlandwebworks.chhs.account.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 /**
  *
  * @author nick
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Address {
 
 	private String city;

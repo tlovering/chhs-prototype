@@ -31,10 +31,12 @@ public class AccountResource {
 
 	private final Logger log = LoggerFactory.getLogger(AccountResource.class);
 	private final ObjectMapper mapper;
+	private final AccountClient accountClient;
 
 	@Autowired
-	public AccountResource(ObjectMapper mapper) {
+	public AccountResource(ObjectMapper mapper, AccountClient accountClient) {
 		this.mapper = mapper;
+		this.accountClient = accountClient;
 	}
 
 	@GET
@@ -47,6 +49,9 @@ public class AccountResource {
 	@POST
 	public Response register(User user) {
 		log.info("Registering user.");
+		accountClient.registerAccount(user);
+		user.setNewPassword(null);
+		user.setNewPasswordConfirmation(null);
 		return Response.ok(user).build();
 	}
 

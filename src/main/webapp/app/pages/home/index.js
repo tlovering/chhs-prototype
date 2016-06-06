@@ -7,5 +7,5 @@ angular.module('chhs').controller('homeCtrl', function ($log, Account) {
   Account.getUserAccount()
     .then(function (data) {
       home.account = data;
-    })
+    });
 });
