@@ -7,7 +7,15 @@
   <div class="register container">
     <h4 class="register__header">CREATE ACCOUNT</h4>
 
-    <div class="row" ng-if="!register.accountCreated && !register.accountError">
+     <div class="row" ng-if="register.accountError">
+      <div class="col-sm-6 col-sm-offset-3">
+        <div class="alert alert-danger" role="alert">
+          There was an error creating your account. Please try again later.
+        </div>
+      </div>
+    </div>
+    
+    <div class="row" ng-if="!register.accountCreated">
       <div class="col-sm-6 col-sm-offset-3">
         <div class="register__summary">
           <p>Create a user account to find and communicate with foster facilities and case workers in your area.</p>
@@ -28,22 +36,22 @@
           <div class="row">
             <div class="col-sm-12 form-group">
               <input name="address" class="form-control" placeholder="Street Address" ng-required="true"
-                     ng-model="register.data.address">
+                     ng-model="register.data.address.street">
             </div>
           </div>
           <div class="row">
             <div class="col-sm-6 form-group">
-              <input name="city" class="form-control" placeholder="City" ng-required="true" ng-model="register.data.city">
+              <input name="city" class="form-control" placeholder="City" ng-required="true" ng-model="register.data.address.city">
             </div>
             <div class="col-sm-3 form-group">
-              <select name="state" class="form-control" placeholder="State" ng-required="true" ng-model="register.data.state">
+              <select name="state" class="form-control" placeholder="State" ng-required="true" ng-model="register.data.address.state">
                 <option value="" selected disabled>State</option>
                 <option ng-repeat="state in register.states" value="{{state}}">{{state}}</option>
               </select>
             </div>
             <div class="col-sm-3 form-group">
-              <input name="zipcode" class="form-control" placeholder="Zip Code" ng-required="true"
-                     ng-model="register.data.zipcode">
+              <input name="postalCode" class="form-control" placeholder="Zip Code" ng-required="true"
+                     ng-model="register.data.address.postalCode">
             </div>
           </div>
           <div class="row">
@@ -59,11 +67,11 @@
           <div class="row">
             <div class="col-sm-6 form-group">
               <input type="password" name="password" placeholder="Password" class="form-control" ng-required="true"
-                     ng-model="register.data.password">
+                     ng-model="register.data.newPassword">
             </div>
             <div class="col-sm-6 form-group">
               <input type="password" name="passwordre" placeholder="Re-enter password" class="form-control" ng-required="true"
-                     ng-model="register.data.passwordre">
+                     ng-model="register.data.newPasswordConfirmation">
             </div>
           </div>
 
@@ -97,10 +105,10 @@
             State is required.
           </div>
           <div class="alert alert-danger" role="alert"
-               ng-show="registerForm.zipcode.$error.required && register.submitted">
+               ng-show="registerForm.postalCode.$error.required && register.submitted">
             Zip code is required.
           </div>
-          <div class="alert alert-danger" role="alert" ng-show="!register.zipcodeValid() && register.submitted">
+          <div class="alert alert-danger" role="alert" ng-show="!register.postalCodeValid() && register.submitted">
             Zip code is invalid.
           </div>
           <div class="alert alert-danger" role="alert"
@@ -146,13 +154,6 @@
       <div class="col-sm-6 col-sm-offset-3">
         <div class="register__success ">
           <h4>Thank you for registering! You will receive a confirmation email shortly.</h4>
-        </div>
-      </div>
-    </div>
-    <div class="row" ng-if="register.accountError">
-      <div class="col-sm-6 col-sm-offset-3">
-        <div class="alert alert-danger" role="alert">
-          There was an error creating your account. Please try again later.
         </div>
       </div>
     </div>

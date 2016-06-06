@@ -36,7 +36,7 @@ public class TokenAuthFilter extends AbstractPreAuthenticatedProcessingFilter {
 				}
 			}
 		}
-		log.info("No preauth token foundfound.");
+		log.trace("No preauth token foundfound.");
 		return null;
 	}
 	private static final String TOKEN_NAME = "Token";

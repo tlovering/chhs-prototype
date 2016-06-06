@@ -3,7 +3,7 @@
 angular.module('chhs').factory('Account', function ($http, $log) {
 
   function createAccount(accountInfo) {
-    return $http.post('/api/account/register', accountInfo)
+    return $http.post('/api/account', accountInfo)
       .then(function (response) {
         return response.data;
       }, function (e) {

@@ -1,11 +1,14 @@
 package com.portlandwebworks.chhs.account.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 /**
  *
  * @author nick
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class User {
 	
 	private String firstName;
@@ -13,11 +16,7 @@ public class User {
 	private String email;
 	private Address address;
 	
-	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-	private String originalPassword;
-	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	private String newPassword;
-	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	private String newPasswordConfirmation;
 
 	public String getFirstName() {
@@ -50,14 +49,6 @@ public class User {
 
 	public void setAddress(Address address) {
 		this.address = address;
-	}
-
-	public String getOriginalPassword() {
-		return originalPassword;
-	}
-
-	public void setOriginalPassword(String originalPassword) {
-		this.originalPassword = originalPassword;
 	}
 
 	public String getNewPassword() {
