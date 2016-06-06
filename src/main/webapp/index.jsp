@@ -8,6 +8,7 @@
     <title>CHHS</title>
 
     <link rel="stylesheet" href="/app/css/styles.css" media="screen"/>
+
     <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 
   </head>
@@ -49,6 +50,7 @@
     <script src="app/directives/case-worker-messenger/index.js"></script>
     <script src="app/directives/site-banner/index.js"></script>
     <script src="app/directives/site-account-cta/index.js"></script>
+    <script src="app/directives/terms-conditions/index.js"></script>
     <!-- endbuild -->
 
   </body>
