@@ -23,28 +23,27 @@ import org.springframework.stereotype.Component;
 public class JsonSuccessHandler implements AuthenticationSuccessHandler {
 
 	private final Logger log = LoggerFactory.getLogger(JsonSuccessHandler.class);
-	
+
 	public JsonSuccessHandler() {
 	}
 
 	@Override
 	public void onAuthenticationSuccess(HttpServletRequest hsr, HttpServletResponse hsr1, Authentication a) throws IOException, ServletException {
-		AuthenticatedUser user = (AuthenticatedUser) a.getPrincipal();
-		log.debug("Successful login attempt by {}.", user.getUsername());
+		AuthenticationResponse details = (AuthenticationResponse) a.getDetails();
+		log.info("Successful login attempt by {}.", details.getUsername());
 		hsr1.setStatus(HttpServletResponse.SC_OK);
 		hsr1.setContentType("application/json");
-		addAuthCookie(a, hsr1, hsr);
+		addAuthCookie(details, hsr1, hsr);
 	}
 
-	private void addAuthCookie(Authentication a, HttpServletResponse resp, HttpServletRequest hsr) {
-		AuthenticatedUser details = (AuthenticatedUser) a.getPrincipal();
+	private void addAuthCookie(AuthenticationResponse details, HttpServletResponse resp, HttpServletRequest hsr) {
 		final Cookie cookie = new Cookie("Token", details.getToken());
 		cookie.setPath("/");
 		cookie.setMaxAge(-1);
-		if(!hsr.getRequestURL().toString().contains("localhost")){
+		if (!hsr.getRequestURL().toString().contains("localhost")) {
 			cookie.setSecure(true); //sending this to any remote host should only be done through https
 		}
 		resp.addCookie(cookie);
 	}
-	
+
 }

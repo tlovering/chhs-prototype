@@ -41,9 +41,7 @@ public class AccountResource {
 
 	@GET
 	public User get() throws IOException {
-		InputStream sample = getClass().getClassLoader().getResourceAsStream("sample-user.json");
-		log.info("Getting current user.");
-		return mapper.readValue(sample, User.class);
+		return accountClient.getCurrent();
 	}
 
 	@POST

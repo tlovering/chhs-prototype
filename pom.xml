@@ -80,6 +80,12 @@
       <artifactId>jstl</artifactId>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>com.netflix.hystrix</groupId>
+      <artifactId>hystrix-core</artifactId>
+      <version>1.5.2</version>
+      <type>jar</type>
+    </dependency>
   </dependencies>
 
   <build>
