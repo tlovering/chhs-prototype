@@ -2,12 +2,11 @@
 
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
-
 <sec:authorize access="isAnonymous()">
   <div class="register container">
     <h4 class="register__header">CREATE ACCOUNT</h4>
 
-     <div class="row" ng-if="register.accountError">
+    <div class="row" ng-if="register.accountError">
       <div class="col-sm-6 col-sm-offset-3">
         <div class="alert alert-danger" role="alert">
           There was an error creating your account. Please try again later.
@@ -25,18 +24,22 @@
 
           <div class="row">
             <div class="col-sm-6 form-group">
-              <input type="text" name="firstName" placeholder="First Name" class="form-control" ng-required="true"
-                     ng-model="register.data.firstName">
+              <input type="text"
+                      name="firstName"
+                      placeholder="First Name"
+                      class="form-control"
+                      ng-required="true"
+                      ng-model="register.data.firstName">
             </div>
             <div class="col-sm-6 form-group">
               <input type="text" name="lastName" placeholder="Last Name" class="form-control" ng-required="true"
-                     ng-model="register.data.lastName">
+                      ng-model="register.data.lastName">
             </div>
           </div>
           <div class="row">
             <div class="col-sm-12 form-group">
               <input name="address" class="form-control" placeholder="Street Address" ng-required="true"
-                     ng-model="register.data.address.street">
+                      ng-model="register.data.address.street">
             </div>
           </div>
           <div class="row">
@@ -51,27 +54,27 @@
             </div>
             <div class="col-sm-3 form-group">
               <input name="postalCode" class="form-control" placeholder="Zip Code" ng-required="true"
-                     ng-model="register.data.address.postalCode">
+                      ng-model="register.data.address.postalCode">
             </div>
           </div>
           <div class="row">
             <div class="col-sm-6 form-group">
               <input type="email" name="email" placeholder="Email" class="form-control" ng-required="true"
-                     ng-model="register.data.email">
+                      ng-model="register.data.email">
             </div>
             <div class="col-sm-6 form-group">
               <input type="email" name="emailre" placeholder="Re-enter email" class="form-control" ng-required="true"
-                     ng-model="register.data.emailre">
+                      ng-model="register.data.emailre">
             </div>
           </div>
           <div class="row">
             <div class="col-sm-6 form-group">
               <input type="password" name="password" placeholder="Password" class="form-control" ng-required="true"
-                     ng-model="register.data.newPassword">
+                      ng-model="register.data.newPassword">
             </div>
             <div class="col-sm-6 form-group">
               <input type="password" name="passwordre" placeholder="Re-enter password" class="form-control" ng-required="true"
-                     ng-model="register.data.newPasswordConfirmation">
+                      ng-model="register.data.newPasswordConfirmation">
             </div>
           </div>
 
@@ -83,49 +86,49 @@
             <input id="termsCheckbox" name="terms" type="checkbox" ng-required="true" ng-model="register.data.terms">
             <label for="termsCheckbox">Yes, I have read and accept the <a class="register__terms-link" href=""
                                                                           data-toggle="modal" data-target="#termsModal">
-              Terms and Conditions </a></label>
+                Terms and Conditions </a></label>
           </div>
 
           <div class="alert alert-danger" role="alert"
-               ng-show="registerForm.firstName.$error.required && register.submitted">
+                ng-show="registerForm.firstName.$error.required && register.submitted">
             First name is required.
           </div>
           <div class="alert alert-danger" role="alert"
-               ng-show="registerForm.lastName.$error.required && register.submitted">
+                ng-show="registerForm.lastName.$error.required && register.submitted">
             Last name is required.
           </div>
           <div class="alert alert-danger" role="alert"
-               ng-show="registerForm.address.$error.required && register.submitted">
+                ng-show="registerForm.address.$error.required && register.submitted">
             Address is required.
           </div>
           <div class="alert alert-danger" role="alert"
-               ng-show="registerForm.city.$error.required && register.submitted">
+                ng-show="registerForm.city.$error.required && register.submitted">
             City is required.
           </div>
           <div class="alert alert-danger" role="alert"
-               ng-show="registerForm.state.$error.required && register.submitted">
+                ng-show="registerForm.state.$error.required && register.submitted">
             State is required.
           </div>
           <div class="alert alert-danger" role="alert"
-               ng-show="registerForm.postalCode.$error.required && register.submitted">
+                ng-show="registerForm.postalCode.$error.required && register.submitted">
             Zip code is required.
           </div>
           <div class="alert alert-danger" role="alert" ng-show="!register.postalCodeValid() && register.submitted">
             Zip code is invalid.
           </div>
           <div class="alert alert-danger" role="alert"
-               ng-show="registerForm.email.$error.required && register.submitted">
+                ng-show="registerForm.email.$error.required && register.submitted">
             Email is required.
           </div>
           <div class="alert alert-danger" role="alert"
-               ng-show="registerForm.email.$invalid && !registerForm.email.$error.required && register.submitted">
+                ng-show="registerForm.email.$invalid && !registerForm.email.$error.required && register.submitted">
             Email is invalid.
           </div>
           <div class="alert alert-danger" role="alert" ng-show="!register.emailsMatch() && register.submitted">
             Emails must match.
           </div>
           <div class="alert alert-danger" role="alert"
-               ng-show="registerForm.password.$error.required && register.submitted">
+                ng-show="registerForm.password.$error.required && register.submitted">
             Password is required.
           </div>
           <div class="alert alert-danger" role="alert" ng-show="!register.passwordValid() && register.submitted">
@@ -135,7 +138,7 @@
             Passwords must match.
           </div>
           <div class="alert alert-danger" role="alert"
-               ng-show="registerForm.terms.$error.required && register.submitted">
+                ng-show="registerForm.terms.$error.required && register.submitted">
             Please accept the Terms and Conditions.
           </div>
 

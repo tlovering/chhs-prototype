@@ -7,5 +7,5 @@ angular.module('chhs').directive('termsConditions', function () {
   return {
     restrict: 'C',
     templateUrl: 'app/directives/terms-conditions/index.jsp'
-  }
+  };
 });
