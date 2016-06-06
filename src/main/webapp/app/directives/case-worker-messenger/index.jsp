@@ -27,7 +27,7 @@
   </div>
 
   <div class="case-worker-messenger__composer">
-    <form name="caseWorkerMessageForm" ng-submit="sendMessage(userMessage.caseWorkerId, userMessage.message)">
+    <form name="caseWorkerMessageForm" ng-submit="sendMessage(caseWorkerMessageForm.$valid, userMessage.caseWorkerId, userMessage.message)">
       <div class="form-group">
         <div class="input-group">
           <span class="input-group-addon">Case Worker ID:</span>

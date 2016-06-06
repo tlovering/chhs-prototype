@@ -8,12 +8,9 @@ angular.module('chhs').factory('messagesFactory', function ($http, $log, $q) {
   }
 
   function sendMessage(caseWorkerId, message) {
-    debugger;
     return $http.post('/api/messages', {
       caseWorkerId: caseWorkerId,
       message: message
-    }).then(function (response) {
-      return getMessages();
     });
   }
 
