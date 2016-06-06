@@ -14,7 +14,7 @@
         </div>
       </div>
     </div>
-    
+
     <div class="row" ng-if="!register.accountCreated">
       <div class="col-sm-6 col-sm-offset-3">
         <div class="register__summary">
@@ -81,7 +81,9 @@
 
           <div class="form-group">
             <input id="termsCheckbox" name="terms" type="checkbox" ng-required="true" ng-model="register.data.terms">
-            <label for="termsCheckbox">Yes, I have read and accept the Terms and Conditions</label>
+            <label for="termsCheckbox">Yes, I have read and accept the <a class="register__terms-link" href=""
+                                                                          data-toggle="modal" data-target="#termsModal">
+              Terms and Conditions </a></label>
           </div>
 
           <div class="alert alert-danger" role="alert"
@@ -139,14 +141,17 @@
 
           <div class="row">
             <div class="col-sm-6 col-sm-push-6 form-group">
-              <button type="submit" name="submit" id="submit" class="register__btn-create form-control btn btn-primary">CREATE ACCOUNT</button>
+              <button type="submit" name="submit" id="submit" class="register__btn-create form-control btn btn-primary">
+                CREATE ACCOUNT
+              </button>
             </div>
             <div class="col-sm-6 col-sm-pull-6 form-group">
               <button type="button" class="form-control btn btn-default" ng-click="register.cancel()">CANCEL</button>
             </div>
           </div>
-
         </form>
+
+        <div class="terms-conditions"></div>
 
       </div>
     </div>
