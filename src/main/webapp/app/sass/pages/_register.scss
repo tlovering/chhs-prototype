@@ -38,7 +38,15 @@
   }
 }
 
-
 .register__success {
   color: $blue-3;
+}
+
+.register__terms-link {
+  color: $blue-3;
+
+  &:hover, &:active, &:focus {
+    color: darken($blue-3,5%);
+  }
+
 }
