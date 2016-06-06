@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="/app/css/styles.css" media="screen"/>
 
     <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
+
 
   </head>
   <body ng-app="chhs">
