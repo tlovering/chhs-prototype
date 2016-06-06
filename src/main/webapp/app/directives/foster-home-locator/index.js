@@ -45,5 +45,5 @@ angular.module('chhs').directive('fosterHomeLocator', function (fosterHomesFacto
       };
 
     }
-  }
+  };
 });

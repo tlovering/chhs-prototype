@@ -17,7 +17,9 @@ angular.module('chhs').directive('caseWorkerMessenger', function (messagesFactor
       });
 
       $scope.sendMessage = function (isFormValid, caseWorkerId, message) {
-        if(!isFormValid) return;
+        if (!isFormValid) {
+          return;
+        }
 
         messagesFactory.sendMessage(caseWorkerId, message).then(function () {
           $scope.userMessage = {};

@@ -1,8 +1,8 @@
-/**
- * Created by rcharow on 6/4/16.
- */
-angular.module('chhs').factory('Auth', function($http,$log,$cookies) {
-  var login = function (email, password) {
+'use strict';
+
+angular.module('chhs').factory('Auth', function ($http, $log, $cookies) {
+
+  function login(email, password) {
     var authRequest = {
       email: email,
       password: password
@@ -20,14 +20,13 @@ angular.module('chhs').factory('Auth', function($http,$log,$cookies) {
 
   }
 
-  var loggedIn = function(){
+  function loggedIn() {
     return !!$cookies.get('Token');
-  };
-
-  var logout = function(){
-
   }
 
+  function logout() {
+
+  }
 
   return {
     login: login,

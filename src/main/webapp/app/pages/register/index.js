@@ -31,34 +31,33 @@ angular.module('chhs').controller('registerCtrl', function ($log, $location, $co
           register.accountCreated = true;
         }, function (e) {
           register.accountError = true;
-        })
+        });
 
     } else {
       register.submitted = true;
     }
-  }
+  };
 
   register.zipcodeValid = function () {
     var reg = /^[0-9]{5}(?:-[0-9]{4})?$/;
     return reg.test(register.data.zipcode);
-  }
+  };
 
   register.emailsMatch = function () {
     return register.data.email === register.data.emailre;
-  }
+  };
 
   register.passwordsMatch = function () {
     return register.data.password === register.data.passwordre;
-  }
+  };
 
   register.passwordValid = function () {
     var reg = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}/;
     return reg.test(register.data.password);
-  }
+  };
 
   register.customValidation = function () {
     return register.zipcodeValid() && register.emailsMatch() && register.passwordValid() && register.passwordsMatch();
-  }
-
+  };
 
 });
