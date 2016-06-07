@@ -8,7 +8,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
-import org.springframework.security.core.context.SecurityContextHolder;
 
 /**
  * Simple feign interceptor that automatically adds the Token header to any
@@ -24,9 +23,9 @@ public class FeignAuthHeaderInterceptor implements RequestInterceptor {
 	public void apply(RequestTemplate rt) {
 		final SecurityContext ctx = SecurityContextHystrixRequestVariable.getInstance().get();
 		final Authentication auth = ctx.getAuthentication();
-		log.info("Seeing if we have auth items to add to the feign request. auth != null == {}", auth != null);
-		if (ctx != null && auth != null) {
-			log.info("Checking for auth details to add token to header. details != null = {}", auth.getDetails() != null);
+		log.trace("Seeing if we have auth items to add to the feign request. auth != null == {}", auth != null);
+		if (auth != null) {
+			log.trace("Checking for auth details to add token to header. details != null = {}", auth.getDetails() != null);
 			if (auth.getDetails() != null
 					&& auth.getDetails() instanceof AuthenticatedUser) {
 				log.trace("User authenticated, adding token header: {}", auth.getCredentials());
