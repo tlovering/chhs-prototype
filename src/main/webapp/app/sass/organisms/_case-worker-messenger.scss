@@ -1,7 +1,7 @@
 .case-worker-messenger__messages{
   max-height: 500px;
   overflow: auto;
-  border: 1px solid $gray-3;
+  border: 1px solid $gray-4;
   padding: 0;
 }
 
@@ -19,7 +19,7 @@
 
 .case-worker-messenger__message{
   border: 0;
-  border-top: 1px solid $gray-3;
+  border-top: 1px solid $gray-4;
   position: static;
 
   &:first-child{
