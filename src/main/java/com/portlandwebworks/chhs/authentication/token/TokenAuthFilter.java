@@ -2,9 +2,11 @@ package com.portlandwebworks.chhs.authentication.token;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.preauth.AbstractPreAuthenticatedProcessingFilter;
 import org.springframework.stereotype.Component;
 
@@ -45,5 +47,17 @@ public class TokenAuthFilter extends AbstractPreAuthenticatedProcessingFilter {
 	protected Object getPreAuthenticatedCredentials(HttpServletRequest hsr) {
 		return null;
 	}
+
+	@Override
+	protected void unsuccessfulAuthentication(HttpServletRequest request, HttpServletResponse response, AuthenticationException failed) {
+		super.unsuccessfulAuthentication(request, response, failed); 
+		log.warn("PreAuth filter fail, clearing token.");
+		Cookie cookie = new Cookie(TOKEN_NAME, "");
+		cookie.setPath("/");
+		cookie.setMaxAge(0);
+		response.addCookie(cookie);;
+		
+	}
+	
 
 }

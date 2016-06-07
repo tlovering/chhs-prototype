@@ -1,16 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.portlandwebworks.chhs.authentication.token;
 
 import com.portlandwebworks.chhs.authentication.AuthenticatedUser;
 import com.portlandwebworks.chhs.authentication.AuthenticationResponse;
 import com.portlandwebworks.chhs.authentication.TokenClient;
 import com.portlandwebworks.chhs.authentication.exceptions.InvalidCredentialsException;
-import java.util.List;
-import java.util.stream.Collectors;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 import org.slf4j.Logger;
@@ -21,8 +14,6 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Component;
 
 /**
@@ -55,7 +46,8 @@ public class TokenAuthManager implements AuthenticationManager {
 		} catch (InvalidCredentialsException ex) {
 			throw new BadCredentialsException("Token is no longer valid.");
 		} catch (Exception ex) {
-			log.error("Error getting pre-auth info.", ex);
+			log.error("Error getting pre-auth info.");
+			log.debug("Error for pre-auth:", ex);
 			throw new BadCredentialsException("Token is no longer validsss.");
 
 		}

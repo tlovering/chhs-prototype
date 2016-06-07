@@ -15,6 +15,7 @@ angular.module('chhs').controller('registerCtrl', function ($log, $location, $co
 
   register.createAccount = function (isValid) {
     register.submitted = false;
+    register.accountError = false;
     if (isValid && register.customValidation()) {
       var accountData = angular.copy(register.data);
       accountData.address.country = 'USA';
