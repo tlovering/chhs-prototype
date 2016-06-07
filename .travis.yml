@@ -21,7 +21,7 @@ after_success:
   - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
   - export REPO=portlandwebworks/chhs-frontend
   - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
-  - script: mvn docker:build
+  - mvn docker:build
   - docker tag $REPO $REPO:$TAG
   - docker tag $REPO $REPO:travis-$TRAVIS_BUILD_NUMBER
   - docker push $REPO
