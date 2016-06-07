@@ -1,10 +1,7 @@
 package com.portlandwebworks.chhs.adoptioncenters;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.portlandwebworks.chhs.adoptioncenters.model.AdoptionCenter;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.List;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -16,7 +13,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestTemplate;
 
 /**
  *

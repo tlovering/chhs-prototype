@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('chhs').factory('Account', function ($http, $log) {
+angular.module('chhs').factory('Account', function ($http, $log, $q) {
 
   function createAccount(accountInfo) {
     return $http.post('/api/account', accountInfo)
@@ -8,22 +8,32 @@ angular.module('chhs').factory('Account', function ($http, $log) {
         return response.data;
       }, function (e) {
         $log.error('Error creating user account.');
-        throw e;
+        return $q.reject('Error creating account.');
       });
   }
 
   function getUserAccount() {
     return $http.get('/api/account')
       .then(function (response) {
-        return response;
+        return response.data;
       }, function (e) {
         $log.error('Error getting user account.');
-        throw e;
+        return $q.reject('Error getting user account.');
       });
+  }
+
+  function getCaseWorker() {
+    return $http.get('/api/account/caseworker').then(function (response) {
+      return response.data;
+    }, function () {
+      $log.error('Error getting caseworker information.');
+      return $q.reject('Error case worker info account.');
+    });
   }
 
   return {
     createAccount: createAccount,
-    getUserAccount: getUserAccount
+    getUserAccount: getUserAccount,
+    getCaseWorker: getCaseWorker
   };
 });

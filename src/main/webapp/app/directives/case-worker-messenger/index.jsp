@@ -10,14 +10,15 @@
     <div class="case-worker-messenger__messages-content panel-body">
       <ul class="case-worker-messenger__messages-list list-group" ng-if="messages.length > 0">
         <li class="case-worker-messenger__message list-group-item" ng-repeat="message in messages">
-          <span class="case-worker-messenger__message-date pull-right">{{ message.date | date : 'MM/dd/yyyy' }}</span>
+          <span class="case-worker-messenger__message-date pull-right">{{ message.createdAt | date : 'MM/dd/yyyy' }}</span>
           <a href class="case-worker-messenger__message-control pull-right text-danger" ng-click="deleteMessage(message.id)">Delete</a>
-          <a href class="case-worker-messenger__message-control pull-right" ng-if="message.sender === 'CASEWORKER'" ng-click="replyToMessage(message.caseWorkerId)">Reply</a>
+          <a href class="case-worker-messenger__message-control pull-right" ng-if="toMe(message)" ng-click="replyToMessage(message)">Reply</a>
           <p class="case-worker-messenger__message-info">
-            <span ng-if="message.sender === 'CASEWORKER'">{{ message.caseWorkerName }} to Me</span>
-            <span ng-if="message.sender === 'USER'">Me to {{ message.caseWorkerName }}</span>
+            <span ng-if="toMe(message)">{{ message.fromName}} to Me</span>
+            <span ng-if="fromMe(message)">Me to {{ message.toName}}</span>
           </p>
-          <p class="case-worker-messenger__message-contents">{{ message.message }}</p>
+          <h4 class="case-worker-messenger__message-subject">{{message.subject}}</h4>
+          <p class="case-worker-messenger__message-contents">{{ message.content}}</p>
         </li>
       </ul>
       <div ng-if="messages.length == 0">
@@ -27,15 +28,18 @@
   </div>
 
   <div class="case-worker-messenger__composer">
-    <form name="caseWorkerMessageForm" ng-submit="sendMessage(caseWorkerMessageForm.$valid, userMessage.caseWorkerId, userMessage.message)">
+    <form name="caseWorkerMessageForm" ng-submit="sendMessage()">
       <div class="form-group">
         <div class="input-group">
-          <span class="input-group-addon">Case Worker ID:</span>
-          <input type="text" name="recepient" class="form-control" placeholder="Recepient" ng-model="userMessage.caseWorkerId" ng-required="true">
+          <span class="input-group-addon">Case Worker:</span>
+          <input type="text" name="recepient" disabled class="form-control" value="{{caseWorker.firstName + ' ' + caseWorker.lastName + '<' + caseWorker.email + '>'}}" ng-required="true">
         </div>
       </div>
       <div class="form-group">
-        <textarea class="case-worker-messenger__composer-textarea form-control" name="message" rows="15" ng-model="userMessage.message" ng-required="true"></textarea>
+        <input type="text" class="case-worker-messenger__subject-text form-control" ng-model="userMessage.subject" placeholder="Subject" ng-required="true"/>
+      </div>
+      <div class="form-group">
+        <textarea class="case-worker-messenger__composer-textarea form-control" name="message" rows="15" ng-model="userMessage.content" ng-required="true"></textarea>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary" ng-disabled="caseWorkerMessageForm.$invalid">Send</button>

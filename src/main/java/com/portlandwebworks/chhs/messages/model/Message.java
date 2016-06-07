@@ -2,59 +2,91 @@ package com.portlandwebworks.chhs.messages.model;
 
 import java.util.Date;
 
+/**
+ *
+ * @author nick
+ */
 public class Message {
-    private String id;
-    private String caseWorkerId;
-    private String caseWorkerName;
-    private String sender;
-    private Date date;
-    private String message;
+	private Integer id;
+	private String fromName;
+	private String fromEmail;
+	private String toName;
+	private String toEmail;
+	private String subject;
+	private String content;
+	private Date createdAt;
+	private Integer inReplyToId;
 
-    public String getId() {
-        return id;
-    }
+	public Integer getId() {
+		return id;
+	}
 
-    public void setId(String id) {
-        this.id = id;
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public String getCaseWorkerId() {
-        return caseWorkerId;
-    }
+	public String getFromName() {
+		return fromName;
+	}
 
-    public void setCaseWorkerId(String caseWorkerId) {
-        this.caseWorkerId = caseWorkerId;
-    }
+	public void setFromName(String fromName) {
+		this.fromName = fromName;
+	}
 
-    public String getCaseWorkerName() {
-        return caseWorkerName;
-    }
+	public String getFromEmail() {
+		return fromEmail;
+	}
 
-    public void setCaseWorkerName(String caseWorkerName) {
-        this.caseWorkerName = caseWorkerName;
-    }
+	public void setFromEmail(String fromEmail) {
+		this.fromEmail = fromEmail;
+	}
 
-    public String getSender() {
-        return sender;
-    }
+	public String getToName() {
+		return toName;
+	}
 
-    public void setSender(String sender) {
-        this.sender = sender;
-    }
+	public void setToName(String toName) {
+		this.toName = toName;
+	}
 
-    public Date getDate() {
-        return date;
-    }
+	public String getToEmail() {
+		return toEmail;
+	}
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
+	public void setToEmail(String toEmail) {
+		this.toEmail = toEmail;
+	}
 
-    public String getMessage() {
-        return message;
-    }
+	public String getSubject() {
+		return subject;
+	}
 
-    public void setMessage(String message) {
-        this.message = message;
-    }
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public Integer getInReplyToId() {
+		return inReplyToId;
+	}
+
+	public void setInReplyToId(Integer inReplyToId) {
+		this.inReplyToId = inReplyToId;
+	}
+	
 }
