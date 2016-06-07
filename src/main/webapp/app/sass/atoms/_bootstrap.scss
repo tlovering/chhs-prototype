@@ -15,3 +15,10 @@ $icon-font-path: "../../bower_components/bootstrap/fonts/";
 
 // Remove navbar margins that pull out the nav items to the edge, negating padding.
 $navbar-padding-horizontal: 0;
+
+// Largest site width is 1366. Override largest breakpoint and container size.
+$screen-lg: 1366px;
+$grid-gutter-width: 0px;
+$container-tablet: 768px;
+$container-desktop: 992px;
+$container-large-desktop: 1366px;
