@@ -4,7 +4,7 @@
 
 
 <sec:authorize access="isAuthenticated()">
-  <h2>Foster Home Locator</h2>
+  <h2>Foster Facility Finder</h2>
 
   <div class="foster-home-locator__search-input">
     <form class="form-inline" name="fosterHomeLocatorForm" ng-click="searchFosterHomes(search.zip, search.proximity)">
