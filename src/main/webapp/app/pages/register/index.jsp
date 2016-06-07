@@ -59,7 +59,10 @@
           </div>
           <div class="row">
             <div class="col-sm-6 form-group">
-              <input type="email" name="email" placeholder="Email" class="form-control" ng-required="true"
+              <input type="email" name="email" placeholder="Email" class="form-control"
+                      registration-email-validator
+                      ng-model-options="{debounce: 500}"
+                      ng-required="true"
                       ng-model="register.data.email">
             </div>
             <div class="col-sm-6 form-group">
@@ -121,6 +124,10 @@
             Email is required.
           </div>
           <div class="alert alert-danger" role="alert"
+                ng-show="registerForm.email.$invalid && registerForm.email.$error.uniqueEmail">
+            Email address already in use.
+          </div>
+          <div class="alert alert-danger" role="alert"
                 ng-show="registerForm.email.$invalid && !registerForm.email.$error.required && register.submitted">
             Email is invalid.
           </div>
@@ -144,7 +151,7 @@
 
           <div class="row">
             <div class="col-sm-6 col-sm-push-6 form-group">
-              <button type="submit" name="submit" id="submit" class="register__btn-create form-control btn btn-primary">
+              <button type="submit" name="submit" id="submit" class="register__btn-create form-control btn btn-primary" ng-disabled="registerForm.$invalid">
                 CREATE ACCOUNT
               </button>
             </div>

@@ -3,8 +3,10 @@ package com.portlandwebworks.chhs.account;
 import com.portlandwebworks.chhs.authentication.feign.FeignAuthConfiguration;
 import com.portlandwebworks.chhs.account.model.User;
 import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -14,12 +16,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public interface  AccountClient {
 	
 	@RequestMapping(method = RequestMethod.GET, path = "/api/account", produces = "application/json", consumes = "application/json")
-	public User getCurrent();
+	User getCurrent();
 	
 	@RequestMapping(method = RequestMethod.GET, path = "/api/account/caseworker", produces = "application/json", consumes = "application/json")
-	public User getCaseWorker();
+	User getCaseWorker();
 	
 	@RequestMapping(method = RequestMethod.POST, path = "/api/account", produces = "application/json", consumes = "application/json")
-	public void registerAccount(User account);
+	void registerAccount(User account);
+	
+	
+	@RequestMapping(method = RequestMethod.GET, path = "/api/account/available", produces = "application/json", consumes = "application/json")
+	ResponseEntity accountAvailable(@RequestParam("email") String email);
+	
 	
 }

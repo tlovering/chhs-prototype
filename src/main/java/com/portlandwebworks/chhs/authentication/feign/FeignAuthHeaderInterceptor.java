@@ -1,7 +1,6 @@
 package com.portlandwebworks.chhs.authentication.feign;
 
 import com.portlandwebworks.chhs.authentication.AuthenticatedUser;
-import com.portlandwebworks.chhs.authentication.AuthenticationResponse;
 import com.portlandwebworks.chhs.authentication.hystrix.SecurityContextHystrixRequestVariable;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
@@ -25,9 +24,9 @@ public class FeignAuthHeaderInterceptor implements RequestInterceptor {
 	public void apply(RequestTemplate rt) {
 		final SecurityContext ctx = SecurityContextHystrixRequestVariable.getInstance().get();
 		final Authentication auth = ctx.getAuthentication();
-		log.debug("Seeing if we have auth items to add to the feign request. auth != null == {}", auth != null);
+		log.info("Seeing if we have auth items to add to the feign request. auth != null == {}", auth != null);
 		if (ctx != null && auth != null) {
-			log.debug("Checking for auth details to add token to header. details != null = {}", auth.getDetails() != null);
+			log.info("Checking for auth details to add token to header. details != null = {}", auth.getDetails() != null);
 			if (auth.getDetails() != null
 					&& auth.getDetails() instanceof AuthenticatedUser) {
 				log.trace("User authenticated, adding token header: {}", auth.getCredentials());

@@ -1,12 +1,11 @@
 package com.portlandwebworks.chhs.authentication.feign;
 
-import com.portlandwebworks.chhs.authentication.exceptions.InvalidCredentialsException;
-import com.portlandwebworks.chhs.authentication.exceptions.RemoteClientException;
+import com.portlandwebworks.chhs.exceptions.ConflictException;
+import com.portlandwebworks.chhs.exceptions.InvalidCredentialsException;
+import com.portlandwebworks.chhs.exceptions.RemoteClientException;
 import feign.Response;
 import feign.codec.ErrorDecoder;
 import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.StringReader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,13 +19,17 @@ public class GenericErrorDecoder implements ErrorDecoder {
 
 	@Override
 	public Exception decode(String method, Response rspns) {
-			final String body = responseBody(rspns);
-		log.info("Error happened. Seeing if it was bad credentials. \n{}", body);
-		if (rspns.status() == 403) {
-			log.info("Access denied exception, returning generic credentials exception.", body);
-			return new InvalidCredentialsException(body);
-		} else {
-			return new RemoteClientException("Error during remote call.", method, rspns.status());
+		final String body = responseBody(rspns);
+		log.debug("Error happened. Seeing if it was bad credentials. \n{}", body);
+		switch (rspns.status()) {
+			case 403:
+				log.debug("Access denied exception, returning generic credentials exception.", body);
+				throw new InvalidCredentialsException(body);
+			case 409:
+				log.warn("Conflict in request.");
+				throw new ConflictException("Resource conflict for request.");
+			default:
+				throw new RemoteClientException("Error during remote call.", method, rspns.status());
 		}
 	}
 

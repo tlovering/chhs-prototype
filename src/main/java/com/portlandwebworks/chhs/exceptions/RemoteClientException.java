@@ -1,4 +1,4 @@
-package com.portlandwebworks.chhs.authentication.exceptions;
+package com.portlandwebworks.chhs.exceptions;
 
 /**
  *

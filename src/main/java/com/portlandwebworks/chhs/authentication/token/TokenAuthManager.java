@@ -3,7 +3,7 @@ package com.portlandwebworks.chhs.authentication.token;
 import com.portlandwebworks.chhs.authentication.AuthenticatedUser;
 import com.portlandwebworks.chhs.authentication.AuthenticationResponse;
 import com.portlandwebworks.chhs.authentication.TokenClient;
-import com.portlandwebworks.chhs.authentication.exceptions.InvalidCredentialsException;
+import com.portlandwebworks.chhs.exceptions.InvalidCredentialsException;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 import org.slf4j.Logger;

@@ -2,6 +2,7 @@ package com.portlandwebworks.chhs.account;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.portlandwebworks.chhs.account.model.User;
+import com.portlandwebworks.chhs.exceptions.ConflictException;
 import java.io.IOException;
 import java.io.InputStream;
 import javax.ws.rs.Consumes;
@@ -10,12 +11,15 @@ import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
@@ -43,11 +47,22 @@ public class AccountResource {
 	public User get() throws IOException {
 		return accountClient.getCurrent();
 	}
-	
+
 	@GET
 	@Path("/caseworker")
 	public User getCaseWorker() throws IOException {
 		return accountClient.getCaseWorker();
+	}
+
+	@GET
+	@Path("/available")
+	public Response available(@QueryParam("email") String email) throws IOException {
+		try {
+			accountClient.accountAvailable(email);
+			return Response.ok().build();
+		} catch (ConflictException ex) {
+			return Response.status(Response.Status.CONFLICT).build();
+		}
 	}
 
 	@POST
