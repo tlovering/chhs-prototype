@@ -16,6 +16,16 @@
   }
 }
 
+.site-account-cta__action{
+  @media (min-width: $screen-md) {
+    padding: 0;
+  }
+
+  @media (min-width: $screen-lg) {
+    padding: 0 15px;
+  }
+}
+
 .site-account-cta__content{
   display: inline-block;
   vertical-align: middle;
