@@ -14,16 +14,12 @@
     <div class="page-home__summary-section col-md-4">
       <div class="page-home__summary-content">
         <img class="page_home_summary-img" src="app/assets/home/locator.png">
-        <h4 class="page-home__summary-header"><a href="#/dashboard">Foster Home Locator</a></h4>
+        <h4 class="page-home__summary-header"><a href="#/dashboard">Foster Facility Finder</a></h4>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Aenean euismod bibendum laoreet. Proin
-          gravida dolor sit amet lacus accumsan et viverra justo
-          commodo. Proin sodales pulvinar tempor.
+          The Foster Facility Locator tool allows foster parents to locate foster family agency locations in the area with a simple zip-code search.
         </p>
         <p>
-          Cum sociis natoque penatibus et magnis dis parturient
-          montes, nascetur ridiculus mus.
+          To use this free service, you must set up a profile. It's easy, click below to quickly create an account, or if you already have an account, simply sign in.
         </p>
       </div>
     </div>
@@ -32,26 +28,19 @@
         <img class="page_home_summary-img" src="app/assets/home/message_caseworkers.png">
         <h4 class="page-home__summary-header"><a href="#/dashboard">Message Caseworkers</a></h4>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Aenean euismod bibendum laoreet. Proin
-          gravida dolor sit amet lacus accumsan et viverra justo
-          commodo. Proin sodales pulvinar tempor.
+          Our free service allows foster parents to message caseworkers with questions about foster facilities and other matters.
         </p>
         <p>
-          Cum sociis natoque penatibus et magnis dis parturient
-          montes, nascetur ridiculus mus.
+          To access messaging, you must set up a profile. It's easy, click below to quickly create an account, or if you already have an account, simply sign in.
         </p>
       </div>
     </div>
     <div class="page-home__summary-section col-md-4">
       <div class="page-home__summary-content">
         <img class="page_home_summary-img" src="app/assets/home/contact.png">
-        <h4 class="page-home__summary-header"><a href="#/dashboard">About/Contact CWDS</a></h4>
+        <h4 class="page-home__summary-header"><a href="#/support">About/Contact CWDS</a></h4>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Aenean euismod bibendum laoreet. Proin
-          gravida dolor sit amet lacus accumsan et viverra justo
-          commodo. Proin sodales pulvinar tempor.
+          Child Welfare Digital Services provides services to foster parents in the state of California.
         </p>
         <div>
           <strong>CWDS</strong>
