@@ -18,7 +18,7 @@
             <span ng-if="fromMe(message)">Me to {{ message.toName}}</span>
           </p>
           <h4 class="case-worker-messenger__message-subject">{{message.subject}}</h4>
-          <p class="case-worker-messenger__message-contents">{{ message.content}}</p>
+          <p class="case-worker-messenger__message-contents">{{message.content}}</p>
         </li>
       </ul>
       <div ng-if="messages.length == 0">
