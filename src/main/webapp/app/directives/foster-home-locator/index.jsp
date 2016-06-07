@@ -23,6 +23,7 @@
     </ui-gmap-google-map>
   </div>
 
+  <h3>Foster Facility Results</h3>
   <div class="foster-home-locator__search-results table-responsive">
     <table class="table">
       <thead>
