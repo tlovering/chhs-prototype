@@ -10,19 +10,19 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#/home">
+      <a class="site-header__logo-link navbar-brand" href="#/home">
         <img class="site-header__logo" alt="CWDS" src="app/assets/site-header/logo.png">
       </a>
     </div>
     <div class="site-header__collapse collapse navbar-collapse" id="topNav">
       <ul class="site_header__links nav navbar-nav navbar-right">
         <sec:authorize access="isAnonymous()">
-          <li><a href="#/register" class="site-header__link">Create Account</a></li>
-          <li><a href="#/login" class="site-header__link">Sign In</a></li>
+          <li class="site-header__link-item"><a href="#/register" class="site-header__link">Create Account</a></li>
+          <li class="site-header__link-item"><a href="#/login" class="site-header__link">Sign In</a></li>
         </sec:authorize>
-          <li><a href="#/support" class="site-header__link">Help</a></li>
+          <li class="site-header__link-item"><a href="#/support" class="site-header__link">Help</a></li>
         <sec:authorize access="isAuthenticated()">
-          <li><a href="/logout" class="site-header__link">Logout</a></li>
+          <li class="site-header__link-item"><a href="/logout" class="site-header__link">Logout</a></li>
         </sec:authorize>
       </ul>
     </div>

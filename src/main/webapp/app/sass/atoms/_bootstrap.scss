@@ -12,3 +12,6 @@ $font-family-base: 'PT Sans', sans-serif;
 
 // Set fonts directory
 $icon-font-path: "../../bower_components/bootstrap/fonts/";
+
+// Remove navbar margins that pull out the nav items to the edge, negating padding.
+$navbar-padding-horizontal: 0;

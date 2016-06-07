@@ -2,24 +2,48 @@
   background: white;
   border: none;
   margin: 0 auto;
-  height: 75px;
 }
 
 .site-header__collapse {
-  padding-top: 10px;
   background: white;
+}
+
+.site-header__logo-link{
+  padding: 5px 0;
+
+  @media (min-width: $screen-sm) {
+    padding: 25px;
+    height: auto;
+  }
 }
 
 .site-header__logo {
   height: 40px;
+
+  @media (min-width: $screen-sm) {
+    height: 73px;
+  }
 }
 
-.site-header__navbar-header{
-  button {
-    margin-top: 15px;
+.site-header__link-item{
+
+  @media (min-width: $screen-sm) {
+    border-left: 1px solid $gray-4;
+    margin: 50px 0;
+
+    &:first-child{
+      border: none;
+    }
   }
 }
 
 .site-header__link{
   text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+
+  @media (min-width: $screen-sm) {
+    padding: 0 25px !important;
+    line-height: 2rem !important;
+  }
 }
