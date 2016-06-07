@@ -31,8 +31,12 @@ angular.module('chhs').directive('caseWorkerMessenger', function (messagesFactor
         });
       };
 
-      $scope.replyToMessage = function (caseWorkerId) {
-        $scope.userMessage.caseWorkerId = caseWorkerId;
+      $scope.replyToMessage = function (message) {
+        $scope.replyTo = message;
+        $scope.userMessage = {
+          inReplyToId: message.id,
+          subject: 'RE: ' + message.subject
+        };
       };
 
       $scope.deleteMessage = function (id) {
@@ -40,6 +44,7 @@ angular.module('chhs').directive('caseWorkerMessenger', function (messagesFactor
       };
 
       $scope.resetMessage = function () {
+        $scope.replyTo = undefined;
         $scope.userMessage = {};
       };
 
@@ -49,7 +54,7 @@ angular.module('chhs').directive('caseWorkerMessenger', function (messagesFactor
       $scope.fromMe = function (msg) {
         return account !== undefined && account.email === msg.fromEmail;
       };
-      
+
       loadMessages();
     }
   };

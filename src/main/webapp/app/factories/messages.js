@@ -13,7 +13,7 @@ angular.module('chhs').factory('messagesFactory', function ($http, $log, $q) {
     message.toEmail = caseWorker.email;
     return $http.post('/api/messages', message);
   }
-  
+
   function deleteMessage(messageId) {
     $log.debug('Marking message ' + messageId + ' as deleted.');
     return $http.delete('/api/messages/' + messageId);
