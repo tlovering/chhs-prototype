@@ -168,7 +168,7 @@
     <div class="row" ng-if="register.accountCreated">
       <div class="col-sm-6 col-sm-offset-3">
         <div class="register__success form__success">
-          <h4>Thank you for registering! You will receive a confirmation email shortly.</h4>
+          <h4>Thank you for registering! You can now login using the email and password you provided.</h4>
         </div>
       </div>
     </div>
