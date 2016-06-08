@@ -12,10 +12,20 @@ angular.module('chhs').config(function ($routeProvider) {
       controller: 'registerCtrl',
       controllerAs: 'register',
       resolve: {
-        loggedIn: function($location, Auth){
-          if(Auth.loggedIn()){
+        loggedIn: function ($location, Auth) {
+          if (Auth.loggedIn()) {
             $location.path('/dashboard');
           }
+        }
+      }
+    })
+    .when('/account', {
+      templateUrl: '/app/pages/account/manage.jsp',
+      controller: 'manageAccountCtrl',
+      controllerAs: 'update',
+      resolve: {
+        account: function(Account){
+          return Account.getUserAccount();
         }
       }
     })
@@ -24,8 +34,8 @@ angular.module('chhs').config(function ($routeProvider) {
       controller: 'loginCtrl',
       controllerAs: 'login',
       resolve: {
-        loggedIn: function($location, Auth){
-          if(Auth.loggedIn()){
+        loggedIn: function ($location, Auth) {
+          if (Auth.loggedIn()) {
             $location.path('/dashboard');
           }
         }
@@ -36,8 +46,8 @@ angular.module('chhs').config(function ($routeProvider) {
       controller: 'homeCtrl',
       controllerAs: 'home',
       resolve: {
-        logout: function($location, Auth){
-          if(Auth.loggedIn()){
+        logout: function ($location, Auth) {
+          if (Auth.loggedIn()) {
             Auth.logout();
           }
         }
@@ -48,8 +58,8 @@ angular.module('chhs').config(function ($routeProvider) {
       controller: 'dashboardCtrl',
       controllerAs: 'dashboard',
       resolve: {
-        loggedIn: function($location, Auth){
-          if(!Auth.loggedIn()){
+        loggedIn: function ($location, Auth) {
+          if (!Auth.loggedIn()) {
             $location.path('/login');
           }
         }

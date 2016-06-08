@@ -4,7 +4,7 @@
 
 <sec:authorize access="isAnonymous()">
   <div class="register container">
-    <h4 class="register__header">CREATE ACCOUNT</h4>
+    <h4 class="register__header form__header">CREATE ACCOUNT</h4>
 
     <div class="row" ng-if="register.accountError">
       <div class="col-sm-6 col-sm-offset-3">
@@ -16,7 +16,7 @@
 
     <div class="row" ng-if="!register.accountCreated">
       <div class="col-sm-6 col-sm-offset-3">
-        <div class="register__summary">
+        <div class="register__summary form__summary">
           <p>Create a user account to find and communicate with foster facilities and case workers in your area.</p>
         </div>
 
@@ -81,7 +81,7 @@
             </div>
           </div>
 
-          <p><span class="register__required-asterisk">*</span> All fields are required.</p>
+          <p><span class="register__required-asterisk form__required-asterisk">*</span> All fields are required.</p>
           <p>Passwords must match and be at least 10 characters long, contain at least one number, one uppercase A-Z,
             and one lower case a-z.</p>
 
@@ -151,7 +151,7 @@
 
           <div class="row">
             <div class="col-sm-6 col-sm-push-6 form-group">
-              <button type="submit" name="submit" id="submit" class="register__btn-create form-control btn btn-primary" ng-disabled="registerForm.$invalid">
+              <button type="submit" name="submit" id="submit" class="register__btn-create form__btn-create form-control btn btn-primary" ng-disabled="registerForm.$invalid">
                 CREATE ACCOUNT
               </button>
             </div>
@@ -167,7 +167,7 @@
     </div>
     <div class="row" ng-if="register.accountCreated">
       <div class="col-sm-6 col-sm-offset-3">
-        <div class="register__success ">
+        <div class="register__success form__success">
           <h4>Thank you for registering! You will receive a confirmation email shortly.</h4>
         </div>
       </div>

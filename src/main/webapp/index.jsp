@@ -37,6 +37,7 @@
     <script src="app/factories/account.js"></script>
     <script src="app/factories/fosterHomes.js"></script>
     <script src="app/factories/messages.js"></script>
+    <script src="app/pages/account/manage.js"></script>
     <script src="app/pages/home/index.js"></script>
     <script src="app/pages/login/index.js"></script>
     <script src="app/pages/register/directives/registrationEmailValidator.js"></script>

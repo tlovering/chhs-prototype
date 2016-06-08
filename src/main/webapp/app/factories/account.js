@@ -31,9 +31,19 @@ angular.module('chhs').factory('Account', function ($http, $log, $q) {
     });
   }
 
+  function update(account) {
+    return $http.put('/api/account/', account).then(function () {
+      return true;
+    }, function () {
+      $log.error('Error updating account information.');
+      return $q.reject('Error updating account information.');
+    });
+  }
+
   return {
     createAccount: createAccount,
     getUserAccount: getUserAccount,
-    getCaseWorker: getCaseWorker
+    getCaseWorker: getCaseWorker,
+    update: update
   };
 });

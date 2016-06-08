@@ -12,6 +12,7 @@
 // Molecules (widgets, input groups, etc.)
 
 // Organisms (page sections, etc.)
+@import "organisms/form-page";
 @import "organisms/site-header";
 @import "organisms/site-footer.scss";
 @import "organisms/foster-home-locator";
@@ -29,3 +30,4 @@
 @import "pages/register";
 @import "pages/dashboard";
 @import "pages/support";
+@import "pages/manage-account";
