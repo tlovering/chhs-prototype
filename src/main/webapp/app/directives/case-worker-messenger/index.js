@@ -19,8 +19,14 @@ angular.module('chhs').directive('caseWorkerMessenger', function (messagesFactor
         });
       }
 
+      function hideComposeWindow(){
+        // Because data-dismiss overrides handlers and prevents Angular clicks.
+        $('#case-worker-messenger__composer').modal('hide');
+      }
+
       $scope.sendMessage = function () {
         messagesFactory.sendMessage($scope.userMessage).then(function () {
+          hideComposeWindow();
           $scope.userMessage = null;
           $scope.caseWorkerMessageForm.$setPristine();
           loadMessages();
@@ -45,8 +51,9 @@ angular.module('chhs').directive('caseWorkerMessenger', function (messagesFactor
         });
       };
 
-      $scope.resetMessage = function () {
+      $scope.cancelCompose = function () {
         $scope.userMessage = null;
+        hideComposeWindow();
       };
 
       $scope.viewMessage = function(message){

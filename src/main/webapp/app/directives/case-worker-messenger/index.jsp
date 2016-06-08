@@ -6,7 +6,7 @@
 <sec:authorize access="isAuthenticated()">
   <header class="clearfix">
     <h3 class="case-worker-messenger__header-text pull-left">My Messages</h3>
-    <a href="#" class="case-worker-messenger__compose-link pull-right">Create New Message</a>
+    <a href class="case-worker-messenger__compose-link pull-right" ng-click="composeMessage()" data-toggle="modal" data-target="#case-worker-messenger__composer">Create New Message</a>
   </header>
 
   <div class="case-worker-messenger__messages panel">
@@ -50,7 +50,7 @@
       <div class="modal-content">
         <form name="caseWorkerMessageForm" ng-submit="sendMessage(caseWorkerMessageForm.$valid)">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <button type="button" class="close" ng-click="cancelCompose()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <h4 class="modal-title">Compose Message</h4>
           </div>
           <div class="modal-body">
@@ -72,7 +72,7 @@
           </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-primary pull-left" ng-disabled="caseWorkerMessageForm.$invalid">Send</button>
-            <button type="button" class="btn btn-link pull-left" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-link pull-left" ng-click="cancelCompose()">Cancel</button>
           </div>
         </form>
       </div>
