@@ -19,7 +19,7 @@
 
   <div class="foster-home-locator__search-map">
     <ui-gmap-google-map center='map.center' zoom='map.zoom'>
-      <ui-gmap-marker ng-repeat="location in results" idKey="location.facility_number" coords="{ latitude: location.location.latitude, longitude: location.location.longitude }"></ui-gmap-marker>
+      <ui-gmap-marker ng-repeat="location in results" events="map.events" idKey="location.facility_number" coords="{ latitude: location.location.latitude, longitude: location.location.longitude }"></ui-gmap-marker>
     </ui-gmap-google-map>
   </div>
 
@@ -34,7 +34,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="location in results">
+        <tr ng-repeat="location in results" id="{{ location.facility_number }}" ng-click="selectFacility(location)" ng-class="{'foster-home-locator__result-selected': selectedFacility === location.facility_number}">
           <td>
             <p class="foster-home-locator__result-name">{{ location.facility_name }}</p>
             <p class="foster-home-locator__result-address">
