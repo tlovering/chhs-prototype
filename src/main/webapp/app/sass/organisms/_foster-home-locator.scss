@@ -9,4 +9,10 @@
 .foster-home-locator__search-results{
   max-height: 500px;
   overflow: auto;
+  position: relative;
+}
+
+
+.foster-home-locator__result-selected {
+  background-color: $gray-5;
 }
