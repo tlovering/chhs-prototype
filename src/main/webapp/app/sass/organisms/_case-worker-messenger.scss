@@ -56,6 +56,46 @@
   white-space: pre-wrap;
 }
 
+.case-worker-messenger__viewer-message-info{
+  background: $gray-3;
+  color: white;
+  padding: 15px;
+}
+
+.case-worker-messenger__viewer-sender{
+  font-weight: bold;
+}
+
+.case-worker-messenger__viewer-recepient{
+  font-weight: bold;
+}
+
+.case-worker-messenger__viewer-message-controls{
+  padding: 15px 10px;
+}
+
+.case-worker-messenger__viewer-control{
+  font-size: 1.4rem;
+  padding: 0 10px;
+  font-weight: bold;
+  border-right: 1px solid $gray-3;
+  line-height: 1.4rem;
+  color: $gray-2;
+  text-decoration: underline;
+
+  &:first-child{
+    border: 0;
+  }
+}
+
+.case-worker-messenger__viewer-message{
+  padding: 0 15px 15px;
+}
+
+.case-worker-messenger__viewer-control--primary{
+  color: $blue-3;
+}
+
 .case-worker-messenger__compose-link {
   margin-top: 25px;
 }

@@ -10,6 +10,8 @@ angular.module('chhs').directive('caseWorkerMessenger', function (messagesFactor
 
       $scope.messages = [];
       $scope.userMessage = {};
+      $scope.viewedMessage = null;
+      $scope.repliedMessage = null;
 
       function loadMessages() {
         messagesFactory.getMessages().then(function (messages) {
@@ -34,7 +36,10 @@ angular.module('chhs').directive('caseWorkerMessenger', function (messagesFactor
       };
 
       $scope.deleteMessage = function (id) {
-        messagesFactory.deleteMessage(id).then(loadMessages);
+        messagesFactory.deleteMessage(id).then(function(){
+          $scope.viewedMessage = null;
+          loadMessages();
+        });
       };
 
       $scope.resetMessage = function () {
@@ -42,8 +47,8 @@ angular.module('chhs').directive('caseWorkerMessenger', function (messagesFactor
         $scope.userMessage = {};
       };
 
-      $scope.viewMessage = function(messageId){
-
+      $scope.viewMessage = function(message){
+        $scope.viewedMessage = message;
       };
 
       Account.getUserAccount().then(function (currentAccount) {

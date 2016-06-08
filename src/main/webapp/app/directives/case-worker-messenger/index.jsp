@@ -12,7 +12,7 @@
   <div class="case-worker-messenger__messages panel">
     <div class="case-worker-messenger__messages-content panel-body">
       <div class="case-worker-messenger__messages-list list-group" ng-if="messages.length > 0">
-        <a href="#" class="case-worker-messenger__message list-group-item" ng-repeat="message in messages" ng-click="viewMessage(message.id)">
+        <a href class="case-worker-messenger__message list-group-item" ng-repeat="message in messages" ng-click="viewMessage(message)">
           <p class="case-worker-messenger__message-sender">{{ message.fromName }}</p>
           <p class="clearfix">
             <span class="case-worker-messenger__message-subject pull-left">{{message.subject}}</span>
@@ -27,24 +27,22 @@
     </div>
   </div>
 
-  <div class="case-worker-messenger__composer">
-    <form name="caseWorkerMessageForm" ng-submit="sendMessage()">
-      <div class="form-group">
-        <div class="input-group">
-          <span class="input-group-addon">Case Worker:</span>
-          <input type="text" name="recepient" disabled class="form-control" value="{{caseWorker.firstName + ' ' + caseWorker.lastName + '<' + caseWorker.email + '>'}}" ng-required="true">
-        </div>
+  <div class="case-worker-messenger__viewer" ng-if="viewedMessage !== null">
+    <div class="case-worker-messenger__viewer-message-info">
+      <p class="case-worker-messenger__viewer-sender">From: {{ viewedMessage.fromName }}</p>
+      <p class="case-worker-messenger__viewer-recepient">To: {{ viewedMessage.toName }}</p>
+      <div class="clearfix">
+        <span class="case-worker-messenger__viewer-subject pull-left">{{ viewedMessage.subject }}</span>
+        <span class="case-worker-messenger__viewer-date pull-right">{{ viewedMessage.createdAt | date : 'M/d/yyyy' }}</span>
       </div>
-      <div class="form-group">
-        <input type="text" class="case-worker-messenger__subject-text form-control" ng-model="userMessage.subject" placeholder="Subject" ng-required="true"/>
+    </div>
+    <div class="case-worker-messenger__viewer-message-controls">
+      <div class="clearfix">
+        <a href class="case-worker-messenger__viewer-control pull-right" ng-click="deleteMessage(viewedMessage.id)">Delete</a>
+        <a href class="case-worker-messenger__viewer-control case-worker-messenger__viewer-control--primary pull-right" ng-click="replyToMessage(viewedMessage.id)">Reply</a>
       </div>
-      <div class="form-group">
-        <textarea class="case-worker-messenger__composer-textarea form-control" name="message" rows="15" ng-model="userMessage.content" ng-required="true"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary" ng-disabled="caseWorkerMessageForm.$invalid">Send</button>
-        <button type="button" class="btn btn-primary" ng-click="resetMessage()">Reset</button>
-      </div>
-    </form>
+    </div>
+    <div class="case-worker-messenger__viewer-message">{{ viewedMessage.content }}</div>
   </div>
+
 </sec:authorize>
