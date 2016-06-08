@@ -14,7 +14,7 @@ public class HomeCtrl {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String redirect(){
-		return "redirect:/index.jsp";
+		return "forward:/index.jsp";
 	}
 	
 }
