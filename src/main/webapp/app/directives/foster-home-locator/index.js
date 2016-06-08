@@ -81,8 +81,9 @@ angular.module('chhs').directive('fosterHomeLocator', function (fosterHomesFacto
       }
 
       $scope.selectFacility = function(location){
+        debugger;
         $scope.selectedFacility = location.facility_number;
-        var x = gMap.markers;
+        zoom([location]);
         gMap.setZoom(16);
       }
 
