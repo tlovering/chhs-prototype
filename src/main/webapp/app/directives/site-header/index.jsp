@@ -21,12 +21,22 @@
           <li class="site-header__link-item"><a href="#/login" class="site-header__link">Sign In</a></li>
         </sec:authorize>
         <sec:authorize access="isAuthenticated()">
-          <li class="site-header__link-item"><a href="#/dashboard" class="site-header__link">Foster Home Finder</a></li>
-          <li class="site-header__link-item"><a href="#/dashboard" class="site-header__link">My Messages <span class="site-header__message-count badge" ng-if="messageCount != null">{{ messageCount }}</span></a></li>
-          <li class="site-header__link-item"><a href="#/account" class="site-header__link">My Account</a></li>
-          <li class="site-header__link-item"><a href="/logout" class="site-header__link">Logout</a></li>
-        </sec:authorize>
-          <li class="site-header__link-item"><a href="#/support" class="site-header__link">Help</a></li>
+        <li class="site-header__link-item"><a href="#/dashboard" class="site-header__link">Foster Home Finder</a></li>
+        <li class="site-header__link-item"><a href="#/dashboard" class="site-header__link">My Messages <span
+          class="site-header__message-count badge" ng-if="messageCount != null">{{ messageCount }}</span></a></li>
+
+
+        <li class="site-header__link-item dropdown">
+          <a href="" class="site-header__link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+             aria-expanded="false">{{ user }} <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#/account" class="site-header__link">My Account</a></li>
+            <li class=""><a href="/logout" class="site-header__link">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+      </sec:authorize>
+      <li class="site-header__link-item"><a href="#/support" class="site-header__link">Help</a></li>
       </ul>
     </div>
   </div>
