@@ -30,8 +30,8 @@
           <a href="" class="site-header__link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
              aria-expanded="false">{{ user }} <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#/account" class="site-header__link">My Account</a></li>
-            <li class=""><a href="/logout" class="site-header__link">Logout</a></li>
+            <li><a href="#/account" class="site-header__link site-header__dropdown-link">My Account</a></li>
+            <li class=""><a href="/logout" class="site-header__link site-header__dropdown-link">Logout</a></li>
           </ul>
         </li>
         </sec:authorize>
