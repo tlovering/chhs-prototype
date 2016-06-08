@@ -34,9 +34,8 @@
             <li class=""><a href="/logout" class="site-header__link">Logout</a></li>
           </ul>
         </li>
-      </ul>
-      </sec:authorize>
-      <li class="site-header__link-item"><a href="#/support" class="site-header__link">Help</a></li>
+        </sec:authorize>
+        <li class="site-header__link-item"><a href="#/support" class="site-header__link">Help</a></li>
       </ul>
     </div>
   </div>
