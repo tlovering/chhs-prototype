@@ -41,6 +41,7 @@
               <span class="foster-home-locator__result-street">{{ location.facility_address }}</span>,
               <span class="foster-home-locator__result-city">{{ location.facility_city }}</span>,
               <span class="foster-home-locator__result-state">{{ location.facility_state }}</span>
+              <span class="foster-home-locator__result-zip">{{ location.facility_zip }}</span>
             </p>
           </td>
           <td>
