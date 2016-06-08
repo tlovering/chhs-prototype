@@ -39,10 +39,44 @@
     <div class="case-worker-messenger__viewer-message-controls">
       <div class="clearfix">
         <a href class="case-worker-messenger__viewer-control pull-right" ng-click="deleteMessage(viewedMessage.id)">Delete</a>
-        <a href class="case-worker-messenger__viewer-control case-worker-messenger__viewer-control--primary pull-right" ng-click="replyToMessage(viewedMessage.id)">Reply</a>
+        <a href class="case-worker-messenger__viewer-control case-worker-messenger__viewer-control--primary pull-right" ng-click="replyToMessage(viewedMessage)" data-toggle="modal" data-target="#case-worker-messenger__composer">Reply</a>
       </div>
     </div>
     <div class="case-worker-messenger__viewer-message">{{ viewedMessage.content }}</div>
+  </div>
+
+  <div id="case-worker-messenger__composer" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form name="caseWorkerMessageForm" ng-submit="sendMessage(caseWorkerMessageForm.$valid)">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Compose Message</h4>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon">To:</span>
+                <input type="text" name="recepient" class="form-control" ng-model="userMessage.toEmail" ng-required="true">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon">Re:</span>
+                <input type="text" name="subject" class="form-control" ng-model="userMessage.subject" placeholder="Subject" ng-required="true"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <textarea class="case-worker-messenger__composer-textarea form-control" name="message" rows="15" ng-model="userMessage.content" ng-required="true"></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary pull-left" ng-disabled="caseWorkerMessageForm.$invalid">Send</button>
+            <button type="button" class="btn btn-link pull-left" data-dismiss="modal">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
 
 </sec:authorize>

@@ -9,7 +9,7 @@ angular.module('chhs').directive('caseWorkerMessenger', function (messagesFactor
       var account;
 
       $scope.messages = [];
-      $scope.userMessage = {};
+      $scope.userMessage = null;
       $scope.viewedMessage = null;
       $scope.repliedMessage = null;
 
@@ -20,19 +20,22 @@ angular.module('chhs').directive('caseWorkerMessenger', function (messagesFactor
       }
 
       $scope.sendMessage = function () {
-        messagesFactory.sendMessage($scope.caseWorker, $scope.userMessage).then(function () {
-          $scope.userMessage = {};
+        messagesFactory.sendMessage($scope.userMessage).then(function () {
+          $scope.userMessage = null;
           $scope.caseWorkerMessageForm.$setPristine();
           loadMessages();
         });
       };
 
+      $scope.composeMessage = function(){
+        $scope.userMessage = messagesFactory.createMessage();
+      };
+
       $scope.replyToMessage = function (message) {
-        $scope.replyTo = message;
-        $scope.userMessage = {
-          inReplyToId: message.id,
-          subject: 'RE: ' + message.subject
-        };
+        $scope.userMessage = messagesFactory.createMessage();
+        $scope.userMessage.inReplyToId = message.id;
+        $scope.userMessage.toEmail = message.fromEmail;
+        $scope.userMessage.subject = 'RE: ' + message.subject;
       };
 
       $scope.deleteMessage = function (id) {
@@ -43,8 +46,7 @@ angular.module('chhs').directive('caseWorkerMessenger', function (messagesFactor
       };
 
       $scope.resetMessage = function () {
-        $scope.replyTo = undefined;
-        $scope.userMessage = {};
+        $scope.userMessage = null;
       };
 
       $scope.viewMessage = function(message){

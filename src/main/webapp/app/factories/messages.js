@@ -2,16 +2,23 @@
 
 angular.module('chhs').factory('messagesFactory', function ($http, $log, $q) {
 
+  function createMessage(){
+    return {
+      toEmail: null,
+      inReplyToId: null,
+      subject: null,
+      content: null,
+    }
+  }
+
   function getMessages() {
     return $http.get('/api/messages').then(function (response) {
       return response.data;
     });
   }
 
-  function sendMessage(caseWorker, userMessage) {
-    var message = angular.copy(userMessage);
-    message.toEmail = caseWorker.email;
-    return $http.post('/api/messages', message);
+  function sendMessage(userMessage) {
+    return $http.post('/api/messages', userMessage);
   }
 
   function deleteMessage(messageId) {
@@ -20,6 +27,7 @@ angular.module('chhs').factory('messagesFactory', function ($http, $log, $q) {
   }
 
   return {
+    createMessage: createMessage,
     getMessages: getMessages,
     sendMessage: sendMessage,
     deleteMessage: deleteMessage
