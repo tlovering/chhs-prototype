@@ -14,7 +14,7 @@ body{
   margin: 0 auto;
   color: $gray-3;
 
-  @media (min-width: $screen-sm) {
+  @media (min-width: $screen-md) {
     padding-top: 123px;
   }
 }

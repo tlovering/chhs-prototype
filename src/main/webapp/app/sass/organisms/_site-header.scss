@@ -11,7 +11,7 @@
 .site-header__logo-link{
   padding: 5px;
 
-  @media (min-width: $screen-sm) {
+  @media (min-width: $screen-md) {
     padding: 25px;
     height: auto;
   }
@@ -20,14 +20,14 @@
 .site-header__logo {
   height: 40px;
 
-  @media (min-width: $screen-sm) {
+  @media (min-width: $screen-md) {
     height: 73px;
   }
 }
 
 .site-header__link-item{
 
-  @media (min-width: $screen-sm) {
+  @media (min-width: $screen-md) {
     border-left: 1px solid $gray-5;
     margin: 50px 0;
 
@@ -42,8 +42,12 @@
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
 
-  @media (min-width: $screen-sm) {
+  @media (min-width: $screen-md) {
     padding: 0 25px !important;
     line-height: 2rem !important;
   }
+}
+
+.site-header__message-count{
+  background-color: $blue-3;
 }

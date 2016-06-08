@@ -22,7 +22,7 @@
         </sec:authorize>
         <sec:authorize access="isAuthenticated()">
           <li class="site-header__link-item"><a href="#/dashboard" class="site-header__link">Foster Home Finder</a></li>
-          <li class="site-header__link-item"><a href="#/dashboard" class="site-header__link">My Messages</a></li>
+          <li class="site-header__link-item"><a href="#/dashboard" class="site-header__link">My Messages <span class="site-header__message-count badge">{{ messageCount }}</span></a></li>
           <li class="site-header__link-item"><a href="/logout" class="site-header__link">Logout</a></li>
         </sec:authorize>
           <li class="site-header__link-item"><a href="#/support" class="site-header__link">Help</a></li>
