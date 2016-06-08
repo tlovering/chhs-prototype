@@ -24,13 +24,8 @@ angular.module('chhs').factory('Auth', function ($http, $log, $cookies) {
     return !!$cookies.get('Token');
   }
 
-  function logout() {
-
-  }
-
   return {
     login: login,
-    loggedIn: loggedIn,
-    logout: logout
+    loggedIn: loggedIn
   };
 });
