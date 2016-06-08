@@ -31,7 +31,11 @@ angular.module('chhs').directive('caseWorkerMessenger', function (messagesFactor
       };
 
       $scope.sendMessage = function (isFormValid) {
-        if(!isFormValid) return;
+
+        if(!isFormValid){
+          return;
+        }
+
         $scope.messageSendingFailed = false;
         messagesFactory.sendMessage($scope.userMessage).then(function () {
           hideComposeWindow();

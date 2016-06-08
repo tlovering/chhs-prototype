@@ -8,7 +8,7 @@ angular.module('chhs').factory('messagesFactory', function ($http, $log, $q) {
       inReplyToId: null,
       subject: null,
       content: null,
-    }
+    };
   }
 
   function getMessages() {
