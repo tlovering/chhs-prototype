@@ -10,6 +10,7 @@
 
 .site-header__logo-link{
   padding: 5px;
+  border: none;
 
   @media (min-width: $screen-md) {
     padding: 25px;
@@ -26,12 +27,13 @@
 }
 
 .site-header__link-item{
+  list-style: none;
 
   @media (min-width: $screen-md) {
     border-left: 1px solid $gray-5;
     margin: 50px 0;
 
-    &:first-child{
+    &:first-of-type{
       border: none;
     }
   }
