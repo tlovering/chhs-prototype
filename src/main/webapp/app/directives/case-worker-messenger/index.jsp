@@ -47,32 +47,32 @@
 
   <div id="case-worker-messenger__composer" class="modal fade" tabindex="-1" role="dialog">
     <div class="modal-dialog">
-      <div class="modal-content">
+      <div class="case-worker-messenger__composer-content modal-content">
         <form name="caseWorkerMessageForm" ng-submit="sendMessage(caseWorkerMessageForm.$valid)">
-          <div class="modal-header">
-            <button type="button" class="close" ng-click="cancelCompose()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Compose Message</h4>
+          <div class="case-worker-messenger__composer-header modal-header">
+            <button type="button" class="case-worker-messenger__composer-close close" ng-click="cancelCompose()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="case-worker-messenger__composer-title modal-title">Compose Message</h4>
           </div>
           <div class="modal-body">
-            <div class="form-group">
+            <div class="case-worker-messenger__composer-info-group form-group">
               <div class="input-group">
-                <span class="input-group-addon">To:</span>
-                <input type="text" name="recepient" class="form-control" ng-model="userMessage.toEmail" ng-required="true">
+                <span class="case-worker-messenger__composer-input-addon input-group-addon">To:</span>
+                <input type="text" name="recepient" class="case-worker-messenger__composer-input form-control" ng-model="userMessage.toEmail" ng-required="true">
               </div>
             </div>
-            <div class="form-group">
+            <div class="case-worker-messenger__composer-info-group form-group">
               <div class="input-group">
-                <span class="input-group-addon">Re:</span>
-                <input type="text" name="subject" class="form-control" ng-model="userMessage.subject" placeholder="Subject" ng-required="true"/>
+                <span class="case-worker-messenger__composer-input-addon input-group-addon">Re:</span>
+                <input type="text" name="subject" class="case-worker-messenger__composer-input form-control" ng-model="userMessage.subject" placeholder="Subject" ng-required="true"/>
               </div>
             </div>
-            <div class="form-group">
+            <div class="case-worker-messenger__composer-content-group form-group">
               <textarea class="case-worker-messenger__composer-textarea form-control" name="message" rows="15" ng-model="userMessage.content" ng-required="true"></textarea>
             </div>
           </div>
           <div class="modal-footer">
-            <button type="submit" class="btn btn-primary pull-left" ng-disabled="caseWorkerMessageForm.$invalid">Send</button>
-            <button type="button" class="btn btn-link pull-left" ng-click="cancelCompose()">Cancel</button>
+            <button type="submit" class="case-worker-messenger__composer-send btn btn-primary pull-left" ng-disabled="caseWorkerMessageForm.$invalid">Send</button>
+            <button type="button" class="case-worker-messenger__composer-cancel btn btn-link pull-left" ng-click="cancelCompose()">Cancel</button>
           </div>
         </form>
       </div>
