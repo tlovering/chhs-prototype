@@ -11,6 +11,13 @@
 
   <div class="case-worker-messenger__messages panel">
     <div class="case-worker-messenger__messages-content panel-body">
+      <div class="alert alert-warning alert-dismissable" ng-if="messageRetrieveFailed">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <p>Failed to retrieve messages. Please <a href ng-click="loadMessages()">try again</a>.</p>
+      </div>
+      <div ng-if="messages != null && messages.length == 0">
+        <p class="case-worker-messenger__messages-empty text-center">You have no messages.</p>
+      </div>
       <div class="case-worker-messenger__messages-list list-group" ng-if="messages.length > 0">
         <a href class="case-worker-messenger__message list-group-item" ng-repeat="message in messages" ng-click="viewMessage(message)">
           <p class="case-worker-messenger__message-sender">{{ message.fromName }}</p>
@@ -20,9 +27,6 @@
           </p>
           <p class="case-worker-messenger__message-contents">{{ message.content | limitTo : 150 }}...</p>
         </a>
-      </div>
-      <div ng-if="messages.length == 0">
-        <p class="case-worker-messenger__messages-empty text-center">You have no messages.</p>
       </div>
     </div>
   </div>
@@ -37,6 +41,10 @@
       </div>
     </div>
     <div class="case-worker-messenger__viewer-message-controls">
+      <div class="alert alert-warning alert-dismissable" ng-if="messageDeleteFailed">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <p>Failed to delete message. Please try again.</p>
+      </div>
       <div class="clearfix">
         <a href class="case-worker-messenger__viewer-control pull-right" ng-click="deleteMessage(viewedMessage.id)">Delete</a>
         <a href class="case-worker-messenger__viewer-control case-worker-messenger__viewer-control--primary pull-right" ng-click="replyToMessage(viewedMessage)" data-toggle="modal" data-target="#case-worker-messenger__composer">Reply</a>
@@ -54,6 +62,10 @@
             <h4 class="case-worker-messenger__composer-title modal-title">Compose Message</h4>
           </div>
           <div class="modal-body">
+            <div class="alert alert-warning alert-dismissable" ng-if="messageSendingFailed">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <p>Failed to send message. Please try again.</p>
+            </div>
             <div class="case-worker-messenger__composer-info-group form-group">
               <div class="input-group">
                 <span class="case-worker-messenger__composer-input-addon input-group-addon">To:</span>
@@ -63,7 +75,7 @@
             <div class="case-worker-messenger__composer-info-group form-group">
               <div class="input-group">
                 <span class="case-worker-messenger__composer-input-addon input-group-addon">Re:</span>
-                <input type="text" name="subject" class="case-worker-messenger__composer-input form-control" ng-model="userMessage.subject" placeholder="Subject" ng-required="true"/>
+                <input type="text" name="subject" class="case-worker-messenger__composer-input form-control" ng-model="userMessage.subject" ng-required="true"/>
               </div>
             </div>
             <div class="case-worker-messenger__composer-content-group form-group">

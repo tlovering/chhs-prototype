@@ -8,28 +8,38 @@ angular.module('chhs').directive('caseWorkerMessenger', function (messagesFactor
     controller: function ($scope) {
       var account;
 
+      $scope.messageRetrieveFailed = false;
+      $scope.messageSendingFailed = false;
+      $scope.messageDeleteFailed = false;
       $scope.messages = [];
       $scope.userMessage = null;
       $scope.viewedMessage = null;
       $scope.repliedMessage = null;
-
-      function loadMessages() {
-        messagesFactory.getMessages().then(function (messages) {
-          $scope.messages = messages;
-        });
-      }
 
       function hideComposeWindow(){
         // Because data-dismiss overrides handlers and prevents Angular clicks.
         $('#case-worker-messenger__composer').modal('hide');
       }
 
-      $scope.sendMessage = function () {
+      $scope.loadMessages = function () {
+        $scope.messageRetrieveFailed = false;
+        messagesFactory.getMessages().then(function (messages) {
+          $scope.messages = messages;
+        }, function(){
+          $scope.messageRetrieveFailed = true;
+        });
+      };
+
+      $scope.sendMessage = function (isFormValid) {
+        if(!isFormValid) return;
+        $scope.messageSendingFailed = false;
         messagesFactory.sendMessage($scope.userMessage).then(function () {
           hideComposeWindow();
           $scope.userMessage = null;
           $scope.caseWorkerMessageForm.$setPristine();
-          loadMessages();
+          $scope.loadMessages();
+        }, function(){
+          $scope.messageSendingFailed = true;
         });
       };
 
@@ -45,14 +55,18 @@ angular.module('chhs').directive('caseWorkerMessenger', function (messagesFactor
       };
 
       $scope.deleteMessage = function (id) {
+        $scope.messageDeleteFailed = false;
         messagesFactory.deleteMessage(id).then(function(){
           $scope.viewedMessage = null;
-          loadMessages();
+          $scope.loadMessages();
+        }, function(){
+          $scope.messageDeleteFailed = true;
         });
       };
 
       $scope.cancelCompose = function () {
         $scope.userMessage = null;
+        $scope.messageSendingFailed = false;
         hideComposeWindow();
       };
 
@@ -68,7 +82,7 @@ angular.module('chhs').directive('caseWorkerMessenger', function (messagesFactor
         $scope.caseWorker = caseWorker;
       });
 
-      loadMessages();
+      $scope.loadMessages();
     }
   };
 });
