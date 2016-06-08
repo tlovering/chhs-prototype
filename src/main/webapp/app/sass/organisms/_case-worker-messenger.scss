@@ -1,56 +1,70 @@
-.case-worker-messenger__messages{
+.case-worker-messenger__header-text {
+  color: $orange-1;
+}
+
+.case-worker-messenger__messages {
   max-height: 500px;
   overflow: auto;
-  border: 1px solid $gray-4;
   padding: 0;
+  box-shadow: none;
+  border-top: 1px solid $gray-4;
+  border-bottom: 1px solid $gray-4;
+  margin-bottom: 0;
+  border-radius: 0;
 }
 
-.case-worker-messenger__messages-content{
-  padding: 0;
-}
-
-.case-worker-messenger__message-contents{
-  white-space: pre-wrap;
-}
-
-.case-worker-messenger__messages-list{
+.case-worker-messenger__messages-list {
   margin: 0;
 }
 
-.case-worker-messenger__messages-empty{
+.case-worker-messenger__messages-empty {
   margin: 15px;
 }
 
-.case-worker-messenger__message{
+.case-worker-messenger__messages-content {
+  padding: 0;
+}
+
+.case-worker-messenger__message {
   border: 0;
   border-top: 1px solid $gray-4;
   position: static;
+  margin: 0;
+  border-radius: 0 !important;
+  padding: 15px;
+  line-height: 1.75rem;
 
-  &:first-child{
+  &:first-child {
     border: 0;
-    border-radius: 5px;
-  }
-
-  &:last-child{
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
   }
 }
 
-
-.case-worker-messenger__message-info{
+.case-worker-messenger__message-date{
   font-weight: bold;
 }
 
-.case-worker-messenger__message-control{
-  margin-right: 0.5rem;
+.case-worker-messenger__message-sender {
+  font-weight: bold;
+  color: $blue-3;
 }
 
-.case-worker-messenger__composer-info{
+.case-worker-messenger__message-subject{
+  font-weight: bold;
+}
+
+.case-worker-messenger__message-contents {
+  white-space: pre-wrap;
+}
+
+.case-worker-messenger__compose-link {
+  margin-top: 25px;
+}
+
+.case-worker-messenger__composer-info {
   margin-bottom: 15px;
 }
 
-.case-worker-messenger__composer-textarea{
+.case-worker-messenger__composer-textarea {
   display: block;
   width: 100%;
 }

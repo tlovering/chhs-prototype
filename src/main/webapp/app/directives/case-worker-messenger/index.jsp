@@ -4,23 +4,23 @@
 
 
 <sec:authorize access="isAuthenticated()">
-  <h2>My Messages</h2>
+  <header class="clearfix">
+    <h3 class="case-worker-messenger__header-text pull-left">My Messages</h3>
+    <a href="#" class="case-worker-messenger__compose-link pull-right">Create New Message</a>
+  </header>
 
   <div class="case-worker-messenger__messages panel">
     <div class="case-worker-messenger__messages-content panel-body">
-      <ul class="case-worker-messenger__messages-list list-group" ng-if="messages.length > 0">
-        <li class="case-worker-messenger__message list-group-item" ng-repeat="message in messages">
-          <span class="case-worker-messenger__message-date pull-right">{{ message.createdAt | date : 'MM/dd/yyyy' }}</span>
-          <a href class="case-worker-messenger__message-control pull-right text-danger" ng-click="deleteMessage(message.id)">Delete</a>
-          <a href class="case-worker-messenger__message-control pull-right" ng-if="toMe(message)" ng-click="replyToMessage(message)">Reply</a>
-          <p class="case-worker-messenger__message-info">
-            <span ng-if="toMe(message)">{{ message.fromName}} to Me</span>
-            <span ng-if="fromMe(message)">Me to {{ message.toName}}</span>
+      <div class="case-worker-messenger__messages-list list-group" ng-if="messages.length > 0">
+        <a href="#" class="case-worker-messenger__message list-group-item" ng-repeat="message in messages" ng-click="viewMessage(message.id)">
+          <p class="case-worker-messenger__message-sender">{{ message.fromName }}</p>
+          <p class="clearfix">
+            <span class="case-worker-messenger__message-subject pull-left">{{message.subject}}</span>
+            <span class="case-worker-messenger__message-date pull-right">{{ message.createdAt | date : 'M/d/yyyy' }}</span>
           </p>
-          <h4 class="case-worker-messenger__message-subject">{{message.subject}}</h4>
-          <p class="case-worker-messenger__message-contents">{{message.content}}</p>
-        </li>
-      </ul>
+          <p class="case-worker-messenger__message-contents">{{ message.content | limitTo : 150 }}...</p>
+        </a>
+      </div>
       <div ng-if="messages.length == 0">
         <p class="case-worker-messenger__messages-empty text-center">You have no messages.</p>
       </div>

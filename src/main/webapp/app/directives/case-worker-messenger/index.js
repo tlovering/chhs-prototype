@@ -7,12 +7,6 @@ angular.module('chhs').directive('caseWorkerMessenger', function (messagesFactor
     scope: {},
     controller: function ($scope) {
       var account;
-      Account.getUserAccount().then(function (currentAccount) {
-        account = currentAccount;
-      });
-      Account.getCaseWorker().then(function (caseWorker) {
-        $scope.caseWorker = caseWorker;
-      });
 
       $scope.messages = [];
       $scope.userMessage = {};
@@ -48,12 +42,17 @@ angular.module('chhs').directive('caseWorkerMessenger', function (messagesFactor
         $scope.userMessage = {};
       };
 
-      $scope.toMe = function (msg) {
-        return account !== undefined && account.email === msg.toEmail;
+      $scope.viewMessage = function(messageId){
+
       };
-      $scope.fromMe = function (msg) {
-        return account !== undefined && account.email === msg.fromEmail;
-      };
+
+      Account.getUserAccount().then(function (currentAccount) {
+        account = currentAccount;
+      });
+
+      Account.getCaseWorker().then(function (caseWorker) {
+        $scope.caseWorker = caseWorker;
+      });
 
       loadMessages();
     }
