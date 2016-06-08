@@ -50,6 +50,7 @@ public class RemoteAuthenticationProvider implements AuthenticationProvider {
 			if (ex.getCause() instanceof InvalidCredentialsException) {
 				throw new BadCredentialsException("Bad username/password given.");
 			} else {
+				log.error("Error getting remote authentication.", ex);
 				throw new InternalAuthenticationServiceException("Error getting remote authentication credentials.");
 			}
 		}

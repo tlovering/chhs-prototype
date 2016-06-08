@@ -19,5 +19,4 @@ public class FrontEndApp {
 		SpringApplication app = new SpringApplication(FrontEndApp.class);
 		app.run(args);
 	}
-
 }
