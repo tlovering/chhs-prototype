@@ -65,7 +65,7 @@ public class AccountResource {
 	@POST
 	public Response register(User user) {
 		log.info("Registering user.");
-		accountClient.registerAccount(user);
+		accountClient.register(user);
 		user.setNewPassword(null);
 		user.setNewPasswordConfirmation(null);
 		return Response.ok(user).build();
@@ -73,8 +73,14 @@ public class AccountResource {
 
 	@PUT
 	public Response update(User user) {
-		log.info("Updating user.");
-		return Response.ok(user).build();
+		log.info("Updating user {}.", user.getEmail());
+		try {
+			accountClient.update(user);
+			return Response.ok(user).build();
+		} catch (Exception ex) {
+			log.warn("Could not update account on backend service. {}", ex.getMessage());
+			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
+		}
 	}
 
 	@PUT

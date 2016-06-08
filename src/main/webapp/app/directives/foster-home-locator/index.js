@@ -73,19 +73,18 @@ angular.module('chhs').directive('fosterHomeLocator', function (fosterHomesFacto
 
         var top = $('#' + marker.key).position().top;
         $('.foster-home-locator__search-results').scrollTop(top);
-
-      }
+      };
 
       $scope.map.events = {
         click: $scope.mapClick
-      }
+      };
 
       $scope.selectFacility = function(location){
         debugger;
         $scope.selectedFacility = location.facility_number;
         zoom([location]);
         gMap.setZoom(16);
-      }
+      };
 
 
     }

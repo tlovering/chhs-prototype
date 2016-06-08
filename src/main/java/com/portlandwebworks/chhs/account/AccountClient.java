@@ -22,7 +22,10 @@ public interface  AccountClient {
 	User getCaseWorker();
 	
 	@RequestMapping(method = RequestMethod.POST, path = "/api/account", produces = "application/json", consumes = "application/json")
-	void registerAccount(User account);
+	void register(User account);
+	
+	@RequestMapping(method = RequestMethod.PUT, path = "/api/account", produces = "application/json", consumes = "application/json")
+	void update(User account);
 	
 	
 	@RequestMapping(method = RequestMethod.GET, path = "/api/account/available", produces = "application/json", consumes = "application/json")
