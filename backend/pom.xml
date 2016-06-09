@@ -113,7 +113,7 @@
         <version>0.4.10</version>
         <configuration>
           <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
-          <dockerDirectory>src/main/docker</dockerDirectory>
+          <dockerDirectory>backend/src/main/docker</dockerDirectory>
           <resources>
             <resource>
               <targetPath>/</targetPath>
@@ -122,6 +122,15 @@
             </resource>
           </resources>
         </configuration>
+        <executions>
+          <execution>
+            <id>build-image</id>
+            <phase>package</phase>
+            <goals>
+              <goal>build</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
