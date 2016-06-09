@@ -3,13 +3,14 @@
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <div class="site-footer__container container">
-  <div class="row">
-    <div class="site-footer__info col-sm-3">
+
+  <div class="site-footer__menu row">
+    <div class="site-footer__info site-footer__info--social">
       <a href="https://www.facebook.com/PortlandWebworks/" target="_blank"><img class="site-footer__media-image" src="app/assets/site-footer/facebook.png"/></a>
       <a href="#"><img class="site-footer__media-image" src="app/assets/site-footer/instagram.png"/></a>
       <a href="https://twitter.com/portlandwebwork"  target="_blank"><img class="site-footer__media-image" src="app/assets/site-footer/twitter.png"/></a>
     </div>
-    <div class="site-footer__info col-sm-2">
+    <div class="site-footer__info site-footer__info--links">
       <ul class="list-unstyled">
         <li><a class="site-footer__link" href="#/home">Home</a></li>
         <sec:authorize access="isAnonymous()">
@@ -22,7 +23,7 @@
         </sec:authorize>
       </ul>
     </div>
-    <div class="site-footer__info col-sm-7">
+    <div class="site-footer__info site-footer__info--address">
 
       <p>A division of Child Welfare Services</p>
       <p>Case Management System</p>
@@ -30,9 +31,11 @@
       <p>(800) 555-1212</p>
     </div>
   </div>
-  <div class="row">
+
+  <div class="site-footer__credits row">
     <div class="site-footer__pww col-sm-12 text-center">
-      <a class="center-block" href="http://www.portlandwebworks.com/portfolio"  target="_blank">This site developed by Portland Webworks</a>
+      This site developed by <a href="http://www.portlandwebworks.com/portfolio"  target="_blank">Portland Webworks</a>
     </div>
   </div>
+
 </div>

@@ -10,7 +10,7 @@
     <div class="site-account-cta"></div>
   </sec:authorize>
 
-  <section class="page-home__summary">
+  <section class="page-home__summary row">
     <div class="page-home__summary-section col-md-4">
       <div class="page-home__summary-content">
         <img class="page_home_summary-img" src="app/assets/home/locator.png">
