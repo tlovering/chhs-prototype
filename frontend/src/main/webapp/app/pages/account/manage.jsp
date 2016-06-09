@@ -20,7 +20,7 @@
           <h4>Account information successfully updated.</h4>
           <div class="row">
             <div class="col-xs-4 col-xs-offset-4">
-              <button ng-click="update.updated = false" class="form-control btn btn-default">Ok</button>
+              <button ng-click="update.updated = false" class="form-control btn btn-default manage-acount__success_btn-ok">Ok</button>
             </div>
           </div>
         </div>
@@ -88,7 +88,7 @@
               </button>
             </div>
             <div class="col-sm-6 col-sm-pull-6 form-group">
-              <button type="button" class="form-control btn btn-default" ng-click="update.cancel()">CANCEL</button>
+              <button type="button" class="form-control btn btn-default form__btn-cancel" ng-click="update.cancel()">CANCEL</button>
             </div>
           </div>
         </form>
