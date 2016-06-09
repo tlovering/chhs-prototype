@@ -42,4 +42,5 @@ after_success:
 - kubectl patch deployment backend-deployment -p '{"spec":{"template":{"spec":{"containers":[{"name":"'"backend"'","image":"'"portlandwebworks/chhs-backend:travis-$TRAVIS_BUILD_NUMBER"'"}]}}}}'
 notifications:
   slack:
+    on_success: always
     secure: o0MSoIyOs3pAgwmb0JrrrmW/JkwP2R+F9Ftqx8wrz2lXtej/1/MlR/vhkEP8wAhylyn6UkpWC2bvso0QhqalYYwbILna6unZWj1L1J+ue19Np2KtaKkpZjLpr3G5/4wGnHZRI5KyUQPan6e15CBkxp2gQgVF2ISzyqfLMxgdWpfGKAd6CD6Fs+CtYVywVcZn6FUYbITdhdqjE2oQAgqrQgDxM76+vsQwLpDtlk32IP15cgGnFZqn9E7hOK2NWEjfAeUajpg7VEWeWsGiBq7Ead3e9rfA9LtmSAasi88IowmuR1h/4W91P+vjSFG9xlHFvcNG3KePtrFHBc9XREXc1k5toDxaoT/kiHLN+anyvUTI7BBlFIrcjh7KBA55/rigk+T1cn2F/RMVrfEYsJtyT1/cEc5X5CyFArG+b964V/ZgZdAgP7EMmlkfm4o5+xZp2r3S2e3CsHgaGQeAzLVSrSfIFOn2YWPBbWQCpoeHOPgOAudeLvseOIkEfSJdlxWzMoYpvy83fbEobYRneYXtOa9e6ZyO3ogZN0nKM2I1FxizN128bL3a6Ycoaox84cK32d8jh3fgeFCjcT7mMV+/tvHT6WeY5v8Scyg1qUkkgiQiZ3gM8erXdm4Tyds4Jiunf4do+PpZkXE+rkiMR3Hly7QlpD5O9t1itdnATY5/8eY=
