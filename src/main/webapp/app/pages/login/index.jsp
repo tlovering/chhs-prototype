@@ -29,7 +29,7 @@
             <input class="form-control" type="password" id="password" placeholder="Password" ng-model="login.auth.password"/>
           </div>
           <div class="form-group">
-            <button type="submit" class="btn btn-primary form-control" ng-click="login.login()">SIGN IN</button>
+            <button type="submit" class="login__sign-in btn btn-primary form-control" ng-click="login.login()">SIGN IN</button>
           </div>
         </form>
       </div>
