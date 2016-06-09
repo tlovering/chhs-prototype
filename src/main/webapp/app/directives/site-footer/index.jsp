@@ -5,9 +5,9 @@
 <div class="site-footer__container container">
   <div class="row">
     <div class="site-footer__info col-sm-3">
-      <a href="#"><img class="site-footer__media-image" src="app/assets/site-footer/facebook.png"/></a>
+      <a href="https://www.facebook.com/PortlandWebworks/" target=_blank"><img class="site-footer__media-image" src="app/assets/site-footer/facebook.png"/></a>
       <a href="#"><img class="site-footer__media-image" src="app/assets/site-footer/instagram.png"/></a>
-      <a href="#"><img class="site-footer__media-image" src="app/assets/site-footer/twitter.png"/></a>
+      <a href="https://twitter.com/portlandwebwork"  target=_blank"><img class="site-footer__media-image" src="app/assets/site-footer/twitter.png"/></a>
     </div>
     <div class="site-footer__info col-sm-2">
       <ul class="list-unstyled">
