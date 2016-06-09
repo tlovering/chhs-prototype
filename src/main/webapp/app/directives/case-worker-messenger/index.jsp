@@ -69,7 +69,7 @@
             <div class="case-worker-messenger__composer-info-group form-group">
               <div class="input-group">
                 <span class="case-worker-messenger__composer-input-addon input-group-addon">To:</span>
-                <input type="text" name="recepient" class="case-worker-messenger__composer-input form-control" ng-model="userMessage.toEmail" ng-required="true">
+                <input type="text" name="recepient" class="case-worker-messenger__composer-input form-control" disabled ng-model="userMessage.toEmail" ng-required="true">
               </div>
             </div>
             <div class="case-worker-messenger__composer-info-group form-group">

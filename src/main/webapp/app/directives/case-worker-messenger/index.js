@@ -20,6 +20,13 @@ angular.module('chhs').directive('caseWorkerMessenger', function (messagesFactor
         // Because data-dismiss overrides handlers and prevents Angular clicks.
         $('#case-worker-messenger__composer').modal('hide');
       }
+      
+      function setToField(){
+        Account.getCaseWorker().then(function (caseWorker) {
+          $scope.caseWorker = caseWorker;
+          $scope.userMessage.toEmail = caseWorker.email;
+        });
+      }
 
       $scope.loadMessages = function () {
         $scope.messageRetrieveFailed = false;
@@ -49,10 +56,12 @@ angular.module('chhs').directive('caseWorkerMessenger', function (messagesFactor
 
       $scope.composeMessage = function(){
         $scope.userMessage = messagesFactory.createMessage();
+        setToField();
       };
 
       $scope.replyToMessage = function (message) {
         $scope.userMessage = messagesFactory.createMessage();
+        setToField();
         $scope.userMessage.inReplyToId = message.id;
         $scope.userMessage.toEmail = message.fromEmail;
         $scope.userMessage.subject = 'RE: ' + message.subject;
@@ -80,10 +89,6 @@ angular.module('chhs').directive('caseWorkerMessenger', function (messagesFactor
 
       Account.getUserAccount().then(function (currentAccount) {
         account = currentAccount;
-      });
-
-      Account.getCaseWorker().then(function (caseWorker) {
-        $scope.caseWorker = caseWorker;
       });
 
       $scope.loadMessages();
