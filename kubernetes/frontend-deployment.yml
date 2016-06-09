@@ -21,3 +21,10 @@ spec:
         env:
           - name: BACKEND_URL
             value: http://backend-service:8090
+          - name: SERVER_TOMCAT_REMOTE_IP_HEADER
+            value: x-forwarded-for
+          - name: SERVER_TOMCAT_PROTOCOL_HEADER
+            value: x-forwarded-proto
+          - name: SECURITY_REQUIRE_SSL
+            value: "true"
+

@@ -2,10 +2,12 @@ package com.portlandwebworks.chhs.authentication;
 
 import com.portlandwebworks.chhs.authentication.token.TokenAuthFilter;
 import javax.annotation.PostConstruct;
+import javax.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -42,9 +44,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	public void logConfig() {
 		log.info(" ==== Configuration currently pointing to [{}] for backend service calls ===", backendUrl);
 	}
+
+	@Inject	private SecurityProperties securityProperties;
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
+		if (securityProperties.isRequireSsl()) http.requiresChannel().anyRequest().requiresSecure();
 		http
 				.csrf().disable()
 				.formLogin()
