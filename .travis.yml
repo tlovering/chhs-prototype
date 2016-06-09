@@ -19,7 +19,7 @@ env:
   - secure: GL2WeB10VbYPky6EmH/A7bdKYXKMOHkmmPZrEPgnoa4f+I2H+z/MAGSidGpMW4vevXRVdMWLGWALBDAMj6K+jk743ftSjiR0huE2ZiNv0Jxj7PLU1muOhtN0SwEKS5Bm97vR/KJRtL3I/U+bgnr2iPHu4whNKcqPeTioov+4PoUa7DnzzKkEZDQ9HJjn1eYdv/IogVSKinUVQrKRFRuJtspP6dF6Sh7W5h712Q/wymYNY7JVCkShjLkZhblU5gDQWrRT19TrAlhKM6J0wvIMZ/WVhSaZdAFylE7ox4A9y7ClSSmG01Y507x6HUEwdZIaBYO746jP2UEUHp7Ldj9jr/8hpWxjlaTGhg7rlzKIcmF7H17af3svp3u8HG+cEEy1P0kARAIPPMTopUDWjhOnN8AW08TYt+b62ZJpfol1G6ydA7FXqDFyURyIyqtJakiUopbdDXn9EmBmVkC62bjDk4epcMS1XS6MrFw92TicNc2/CfkbHsamB1Dt1ioFOlKU24bniQae7lFV9lB7AFd9Y1hc6b84/1lXOeeJoUcolLheRJkWS7/NkLsuEC/Am0ItXm4NIsVmaPPtn10v1/wLvi53gdFJfa1UoKh3cRTuj9W/jg4Nbhlp3NAduOut3KHos2dENx59yoHuOuhc19dP5WDm6B32NmoaPYA4j+osbSI=
 before_script:
 - npm install -g bower
-script: mvn install spring-boot:repackage
+script: mvn install -Ppackage spring-boot:repackage
 after_success:
 - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
 - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
