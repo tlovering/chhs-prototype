@@ -17,12 +17,12 @@
     <div class="site-header__collapse collapse navbar-collapse" id="topNav">
       <ul class="site_header__links nav navbar-nav navbar-right">
         <sec:authorize access="isAnonymous()">
-          <li class="site-header__link-item"><a href="#/register" class="site-header__link">Create Account</a></li>
-          <li class="site-header__link-item"><a href="#/login" class="site-header__link">Sign In</a></li>
+          <li class="site-header__link-item"><a href="#/register" class="site-header__link site-header__link-register">Create Account</a></li>
+          <li class="site-header__link-item"><a href="#/login" class="site-header__link site-header__link-login">Sign In</a></li>
         </sec:authorize>
         <sec:authorize access="isAuthenticated()">
-        <li class="site-header__link-item"><a href="#/dashboard" class="site-header__link">Foster Home Finder</a></li>
-        <li class="site-header__link-item"><a href="#/dashboard" class="site-header__link">My Messages <span
+        <li class="site-header__link-item"><a href="#/dashboard" class="site-header__link site-header__link-foster">Foster Home Finder</a></li>
+        <li class="site-header__link-item"><a href="#/dashboard" class="site-header__link site-header__messages">My Messages <span
           class="site-header__message-count badge" ng-if="messageCount != null">{{ messageCount }}</span></a></li>
 
 
@@ -30,12 +30,12 @@
           <a href="" class="site-header__link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
              aria-expanded="false">{{ user }} <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#/account" class="site-header__link site-header__dropdown-link">My Account</a></li>
-            <li class=""><a href="/logout" class="site-header__link site-header__dropdown-link">Logout</a></li>
+            <li><a href="#/account" class="site-header__link site-header__dropdown-link site_header__link-account">My Account</a></li>
+            <li class=""><a href="/logout" class="site-header__link site-header__dropdown-link site_header__link-logout">Logout</a></li>
           </ul>
         </li>
         </sec:authorize>
-        <li class="site-header__link-item"><a href="#/support" class="site-header__link">Help</a></li>
+        <li class="site-header__link-item"><a href="#/support" class="site-header__link site_header__link-help">Help</a></li>
       </ul>
     </div>
   </div>
