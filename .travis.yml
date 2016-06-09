@@ -35,4 +35,5 @@ after_success:
 - kubectl config set-cluster default --server=${GKE_SERVER} --insecure-skip-tls-verify=true
 - kubectl config set-context default --cluster=default --user=default
 - kubectl config use-context default
-- kubectl rolling-update frontend-controller --image=portlandwebworks/travis-$TRAVIS_BUILD_NUMBER
+- kubectl patch deployment frontend-deployment -p '{"spec":{"template":{"spec":{"containers":[{"name":"'"webapp"'","image":"'"$REPO:travis-$TRAVIS_BUILD_NUMBER"'"}]}}}}'
+
