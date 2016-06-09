@@ -49,7 +49,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		if (securityProperties.isRequireSsl()) http.requiresChannel().anyRequest().requiresSecure();
+		//if (securityProperties.isRequireSsl()) http.requiresChannel().anyRequest().requiresSecure();
 		http
 				.csrf().disable()
 				.formLogin()
