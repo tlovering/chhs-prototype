@@ -24,7 +24,7 @@ The application was developed using best practices for user centered design and 
 
 # INSTALLATION
 
-# chhs-frontend [![Build Status](https://travis-ci.org/portlandwebworks/chhs-frontend.svg?branch=develop)](https://travis-ci.org/portlandwebworks/chhs-frontend)
+# chhs-frontend [![Build Status](https://travis-ci.org/portlandwebworks/chhs-prototype.svg?branch=develop)](https://travis-ci.org/portlandwebworks/chhs-prototype)
 
 ***Requirements:***
 
