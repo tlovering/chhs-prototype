@@ -11,7 +11,7 @@ thumbs.db
 # Build artifacts
 .sass-cache
 target
-src/main/webapp/app/css
+frontend/src/main/webapp/app/css
 
 # Dependencies
 node_modules
