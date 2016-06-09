@@ -3,7 +3,11 @@
 angular.module('chhs').controller('registerCtrl', function ($location, Account, STATE_LIST) {
 
   var register = this;
-  register.data = {};
+  register.data = {
+    address: {
+      state: 'CA'
+    }
+  };
   register.accountCreated = false;
   register.accountError = false;
 
